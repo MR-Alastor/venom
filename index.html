@@ -11,7 +11,7 @@
 	<script src="zl.js" type="text/javascript"></script>
 	 
     <title>Тестовый Venom</title>
-	<div class="to-up">Наверх</div>
+
 </head>
 <body>
 
@@ -190,6 +190,31 @@ window.onclick = function(event) {
     baguetteBox.run('.tz-gallery');
 </script>
 <!-------------->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    let to_top_btn = document.querySelector(".to-up");
+
+    window.onscroll = function () {
+        if (window.pageYOffset > 580) {
+            to_top_btn.style.display = "block"
+        } else {
+            to_top_btn.style.display = "none"
+        }
+    }
+
+    // плавный скролл наверх
+    to_top_btn.addEventListener("click", function () {
+        window.scrollBy({
+            top: -document.documentElement.scrollHeight,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+
+
 
 </body>
 </html>
