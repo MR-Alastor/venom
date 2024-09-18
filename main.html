@@ -1,0 +1,222 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+     <link rel="icon" href="logds.ico" type="image/x-icon">
+	<script src="zl.js" type="text/javascript"></script>
+	 
+    <title>Тестовый Venom</title>
+</head>
+<body>
+
+
+
+<!------------------------------------------------------------------------ Шапка и форма----------------------------------------------------------------------------------------------------------------------------->
+
+
+ <div class="header">
+        <img class="log" src="sprites/logds.png" />
+        <br />
+        <a class="mainbtn" href="javascript:PopUpShow()"><span></span>Заказать</a>
+    </div>
+    <form onsubmit="sendContact(event)" name="formText">
+        <div class="b-popup" id="popup1">
+            <div class="b-popup-content">
+			<a href="javascript:PopUpHide()" class="a2">X</a>
+			<br>
+              <h2 class="inp1">Выберите набор:</h2>     
+              <input type="text" style="b-popup-content2" placeholder="&nbspНик" class="form-control" id="nick" list="phonesList">
+			  <datalist id="phonesList">
+            <option value="Venom">35000</option>
+            <option value="Venom2">35000</option>
+			<option value="Venom2">35000</option>
+             </datalist>
+			  <hr>
+<!--------------------------------------------------------------------------->
+
+<div class="form_radio">
+	<input id="radio-1" type="checkbox" value="100"  name="radio">
+	<label for="radio-1">Radio button 1</label>
+</div>
+
+<div class="form_radio">
+    <input id="radio-2" type="checkbox" value="2"  name="radio2">
+    <label for="radio-2">Radio button 2</label>
+</div>
+
+<!--------------------------------------------------------------------------->
+<hr>
+ <h2 class="inp3">Необходимые арты:</h2>
+<input type="text" style="b-popup-content2" placeholder="&nbspНеобходимые арты:" class="form-control" id="input3">
+ <hr>
+<!--------------------------------------------------------------------------->
+<button type="submit" class="btn btn-primary" id="ko">ОТПРАВИТЬ</button>
+
+
+
+  <br><p2>ПРИМЕРНЫЙ ИТОГ:</p2> <input type="text" name="sumOut" disabled="false" value="">
+<!--------------------------------------------------------------------------->
+</div>
+</div>
+ </form>
+	
+	
+
+
+
+
+
+	
+	
+
+	
+	
+	
+	
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <script>
+        async function sendContact(ev) {
+            ev.preventDefault();
+            const senderMessage1 = document
+                .getElementById('nick').value;
+            const senderMessage2 = document
+                .getElementById('input2').value;
+            const senderMessage = document
+                .getElementById('input3').value;
+            const webhookBody = {
+                embeds: [{
+                    title: 'Тестовая форма отправки',
+                    fields: [{
+                        name: 'Ник:',
+                        value: senderMessage1
+                    },
+                    {
+                        name: 'Платформа:',
+                        value: senderMessage2
+                    },
+                    {
+                        name: 'Необходимые арты:',
+                        value: senderMessage
+                    }
+                    ]
+                }],
+            };
+            const webhookUrl = 'https://discord.com/api/webhooks/1285014443524362261/b8hKFA6uWHZ6_d-Lgs1NXMkiM9cleq0VrNQ2alEPgQtv-gUrXx9VcQxuHV98Vcyfkj_T';
+            const response = await fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(webhookBody),
+            });
+            if (response.ok) {
+                alert('Я получил ваше сообщение!');
+            } else {
+                alert('Произошла ошибка! Повторите попытку позже!');
+            }
+        }
+        $(document).ready(function () {
+            //Скрыть PopUp при загрузке страницы    
+            PopUpHide();
+        });
+        //Функция отображения PopUp
+        function PopUpShow() {
+            $("#popup1").show();
+        }
+        //Функция скрытия PopUp
+        function PopUpHide() {
+            $("#popup1").hide();
+        }
+    </script>
+
+
+
+
+
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="container gallery-container">
+
+    <p class="description2">venom shop</p>
+	<hr>
+    <p class="page-description text-center">Все представленные примеры работы были сделаны индивидуально для реальных людей , приобрести понравившуюся вам работу нельзя , можно заказать что-то похожее  </p>
+    
+    <div class="tz-gallery">
+
+        <div class="row">
+
+            <div class="col-sm-12 col-md-4">
+                <a class="lightbox" href="https://mir-devil.ru/_ph/1/2/415778185.jpg">
+                    <img src="https://mir-devil.ru/_ph/1/2/415778185.jpg" alt="Bridge">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="https://mir-devil.ru/_ph/1/2/415778185.jpg">
+                    <img src="https://mir-devil.ru/_ph/1/2/415778185.jpg" alt="Park">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="https://mir-devil.ru/_ph/1/2/415778185.jpg">
+                    <img src="https://mir-devil.ru/_ph/1/2/415778185.jpg" alt="Tunnel">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <a class="lightbox" href="https://mir-devil.ru/_ph/1/2/415778185.jpg">
+                    <img src="https://mir-devil.ru/_ph/1/2/415778185.jpg" alt="Traffic">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="https://mir-devil.ru/_ph/1/2/415778185.jpg">
+                    <img src="https://mir-devil.ru/_ph/1/2/415778185.jpg" alt="Coast">
+                </a>
+            </div> 
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="https://raw.githubusercontent.com/LeshikJanz/libraries/master/Related%20images/Bootstrap%20example/coast.jpg">
+                    <img src="https://mir-devil.ru/_ph/1/2/415778185.jpg" alt="Rails">
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+
+
+
+<script>
+$('body').append('<div class="upbtn"></div>');            
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+        $('.upbtn').css({
+            right: '-120px',
+            bottom: '-120px'
+        });
+        } else {
+        $('.upbtn').css({
+            right: '-220px',
+            bottom: '-220px'
+        });
+    }
+});
+$('.upbtn').on('click',function() {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 500);
+    return false;
+});
+</script>
+</body>
+</html>
