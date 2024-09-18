@@ -20,23 +20,22 @@
 <div class="header">
 <img class="log" src="sprites/logds.png" />
 <br />
-<a class="mainbtn" ><span></span>Заказать</a>
+<button class="mainbtn" id="myBtn">Open Modal</button>
 </div>
 
 
+<div id="myModal" class="modal">
 
+<h2 class="inp1">Выберите набор:</h2>     
+<input type="text" style="b-popup-content2" placeholder="&nbspНик" class="form-control" id="nick" list="phonesList">
 
-
-              <h2 class="inp1">Выберите набор:</h2>     
-              <input type="text" style="b-popup-content2" placeholder="&nbspНик" class="form-control" id="nick" list="phonesList">
-			  <datalist id="phonesList">
-            <option value="Venom">35000</option>
-            <option value="Venom2">35000</option>
-			<option value="Venom2">35000</option>
-             </datalist>
-			  <hr>
+<datalist id="phonesList">
+<option value="Venom">35000</option>
+<option value="Venom2">35000</option>
+<option value="Venom2">35000</option>
+</datalist>
+<hr>
 <!--------------------------------------------------------------------------->
-
 <div class="form_radio">
 	<input id="radio-1" type="checkbox" value="100"  name="radio">
 	<label for="radio-1">Radio button 1</label>
@@ -46,19 +45,17 @@
     <input id="radio-2" type="checkbox" value="2"  name="radio2">
     <label for="radio-2">Radio button 2</label>
 </div>
-
 <!--------------------------------------------------------------------------->
 <hr>
  <h2 class="inp3">Необходимые арты:</h2>
 <input type="text" style="b-popup-content2" placeholder="&nbspНеобходимые арты:" class="form-control" id="input3">
  <hr>
-<!--------------------------------------------------------------------------->
+
 <button type="submit" class="btn btn-primary" id="ko">ОТПРАВИТЬ</button>
-
-
 
 <br><p2>ПРИМЕРНЫЙ ИТОГ:</p2> <input type="text" name="sumOut" disabled="false" value="">
 
+</div>
 
 
 	
