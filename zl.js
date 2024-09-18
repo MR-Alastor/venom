@@ -11,26 +11,22 @@ window.onload = function() {
 };
 
 //-----------------------------------------------
-    $(document).ready(function(){
-        // прячем кнопку #back-top
-        $("#back-top").hide();
+document.addEventListener("DOMContentLoaded", () => {
+    let to_top_btn = document.querySelector(".to-up");
 
-        // появление/затухание кнопки #back-top
-        $(function (){
-            $(window).scroll(function (){
-                if ($(this).scrollTop() > 100){
-                    $('#back-top').fadeIn();
-                } else{
-                    $('#back-top').fadeOut();
-                }
-            });
+    window.onscroll = function () {
+        if (window.pageYOffset > 580) {
+            to_top_btn.style.display = "block"
+        } else {
+            to_top_btn.style.display = "none"
+        }
+    }
 
-            // при клике на ссылку плавно поднимаемся вверх
-            $('#back-top a').click(function (){
-                $('body,html').animate({
-                    scrollTop:0
-                }, 800);
-                return false;
-            });
+    // плавный скролл наверх
+    to_top_btn.addEventListener("click", function () {
+        window.scrollBy({
+            top: -document.documentElement.scrollHeight,
+            behavior: "smooth"
         });
     });
+});
