@@ -28,9 +28,9 @@
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-   <span class="close">&times;</span>
+<!-- Modal content -->
+<div class="modal-content">
+<span class="close">&times;</span>
    
    
    
@@ -76,7 +76,7 @@
 
 
 
-  <br><p2>ПРИМЕРНЫЙ ИТОГ:</p2> <input type="text" name="sumOut" disabled="false" value="">
+  <br><p2>ПРИМЕРНЫЙ ИТОГ:</p2> <input type="text" name="sumOut" disabled="false" value="" id="itog">
 <!--------------------------------------------------------------------------->
 
  </form> 
@@ -195,6 +195,50 @@ window.onclick = function(event) {
 
 
 
+<!-------------Script Discord------------->
+
+<script>
+    async function sendContact(ev) {
+      ev.preventDefault();
+      const senderMessage1 = document
+        .getElementById('nick').value;
+       const senderMessage2 = document
+        .getElementById('input3').value;
+      const senderMessage = document
+        .getElementById('itog').value;
+      const webhookBody = {
+        embeds: [{
+          title: 'Тестовая форма отправки',
+          fields: [{
+              name: 'Ник',
+              value: nick
+            },
+            {
+              name: 'Ответ про сиськи',
+              value: input3
+            },      
+            {
+              name: 'Вид порно',
+              value: itog
+            }
+          ]
+        }],
+      };
+      const webhookUrl = 'https://discord.com/api/webhooks/1285014443524362261/b8hKFA6uWHZ6_d-Lgs1NXMkiM9cleq0VrNQ2alEPgQtv-gUrXx9VcQxuHV98Vcyfkj_T';
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookBody),
+      });
+      if (response.ok) {
+        alert('Я получил ваше сообщение!');
+      } else {
+        alert('Произошла ошибка! Повторите попытку позже!');
+      }
+    }
+  </script>
 
 
 <p22><a href="#top">Back to Top</a></p22>
