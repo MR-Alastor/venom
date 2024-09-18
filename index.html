@@ -12,6 +12,44 @@
 	 
     <title>Тестовый Venom</title>
 
+
+
+
+
+  <style>
+  #topNubex {
+	position: fixed;
+	right: 45px;
+	bottom: 45px;
+   }
+  </style>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+  $(window).scroll(function() {
+  if($(this).scrollTop() != 0) {
+  $('#topNubex').fadeIn();
+  } else {
+  $('#topNubex').fadeOut();
+  }
+  });
+  $('#topNubex').click(function() {
+  $('body,html').animate({scrollTop:0},700);
+  });
+  });
+  </script>
+
+
+
+
+
+
+
+
+
+
 </head>
 <body>
 
@@ -190,10 +228,6 @@ window.onclick = function(event) {
     baguetteBox.run('.tz-gallery');
 </script>
 <!-------------->
-
-<div class="to-up">Наверх</div>
-
-
 
 </body>
 </html>
