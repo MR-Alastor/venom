@@ -22,46 +22,12 @@
  <div class="header">
         <img class="log" src="sprites/logds.png" />
         <br />
-
+        <a class="mainbtn" href="javascript:PopUpShow()"><span></span>Заказать</a>
     </div>
-	
-	
-			<button id="myBtn" style="position: fixed;left: 50%; top:50%;">Open Modal</button>
-	
-
-			
-
-<!--------------------------------------------------------------------------->
-
-
-
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-<!-- Trigger/Open The Modal -->
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
+    <form onsubmit="sendContact(event)" name="formText">
+        <div class="b-popup" id="popup1">
+            <div class="b-popup-content">
+			<a href="javascript:PopUpHide()" class="a2">X</a>
 			<br>
               <h2 class="inp1">Выберите набор:</h2>     
               <input type="text" style="b-popup-content2" placeholder="&nbspНик" class="form-control" id="nick" list="phonesList">
@@ -73,15 +39,15 @@
 			  <hr>
 <!--------------------------------------------------------------------------->
 
-
+<div class="form_radio">
 	<input id="radio-1" type="checkbox" value="100"  name="radio">
 	<label for="radio-1">Radio button 1</label>
+</div>
 
-
-
+<div class="form_radio">
     <input id="radio-2" type="checkbox" value="2"  name="radio2">
     <label for="radio-2">Radio button 2</label>
-
+</div>
 
 <!--------------------------------------------------------------------------->
 <hr>
@@ -94,51 +60,17 @@
 
 
   <br><p2>ПРИМЕРНЫЙ ИТОГ:</p2> <input type="text" name="sumOut" disabled="false" value="">
-  </div>
-
+<!--------------------------------------------------------------------------->
 </div>
+</div>
+ </form>
+	
+	
 
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 
@@ -147,7 +79,60 @@ window.onclick = function(event) {
 	
 	
     <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
-
+    <script>
+        async function sendContact(ev) {
+            ev.preventDefault();
+            const senderMessage1 = document
+                .getElementById('nick').value;
+            const senderMessage2 = document
+                .getElementById('input2').value;
+            const senderMessage = document
+                .getElementById('input3').value;
+            const webhookBody = {
+                embeds: [{
+                    title: 'Тестовая форма отправки',
+                    fields: [{
+                        name: 'Ник:',
+                        value: senderMessage1
+                    },
+                    {
+                        name: 'Платформа:',
+                        value: senderMessage2
+                    },
+                    {
+                        name: 'Необходимые арты:',
+                        value: senderMessage
+                    }
+                    ]
+                }],
+            };
+            const webhookUrl = 'https://discord.com/api/webhooks/1285014443524362261/b8hKFA6uWHZ6_d-Lgs1NXMkiM9cleq0VrNQ2alEPgQtv-gUrXx9VcQxuHV98Vcyfkj_T';
+            const response = await fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(webhookBody),
+            });
+            if (response.ok) {
+                alert('Я получил ваше сообщение!');
+            } else {
+                alert('Произошла ошибка! Повторите попытку позже!');
+            }
+        }
+        $(document).ready(function () {
+            //Скрыть PopUp при загрузке страницы    
+            PopUpHide();
+        });
+        //Функция отображения PopUp
+        function PopUpShow() {
+            $("#popup1").show();
+        }
+        //Функция скрытия PopUp
+        function PopUpHide() {
+            $("#popup1").hide();
+        }
+    </script>
 
 
 
