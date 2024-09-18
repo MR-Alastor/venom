@@ -203,7 +203,7 @@ window.onclick = function(event) {
       const senderMessage1 = document
         .getElementById('nick').value;
        const senderMessage2 = document
-        .getElementById('radio-2').value;
+        .getElementById('input3').value;
       const senderMessage = document
         .getElementById('itog').value;
       const webhookBody = {
@@ -211,15 +211,15 @@ window.onclick = function(event) {
           title: 'Тестовая форма отправки',
           fields: [{
               name: 'Ник',
-              value: nick
+              value: senderMessage
             },
             {
               name: 'Ответ про сиськи',
-              value: radio-2
+              value: senderMessage
             },      
             {
               name: 'Вид порно',
-              value: itog
+              value: senderMessage
             }
           ]
         }],
