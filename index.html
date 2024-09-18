@@ -191,28 +191,23 @@ window.onclick = function(event) {
 </script>
 <!-------------->
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    let to_top_btn = document.querySelector(".to-up");
 
-    window.onscroll = function () {
-        if (window.pageYOffset > 580) {
-            to_top_btn.style.display = "block"
-        } else {
-            to_top_btn.style.display = "none"
-        }
-    }
-
-    // плавный скролл наверх
-    to_top_btn.addEventListener("click", function () {
-        window.scrollBy({
-            top: -document.documentElement.scrollHeight,
-            behavior: "smooth"
-        });
-    });
-});
-</script>
-
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+  $(window).scroll(function() {
+  if($(this).scrollTop() != 0) {
+  $('#topNubex').fadeIn();
+  } else {
+  $('#topNubex').fadeOut();
+  }
+  });
+  $('#topNubex').click(function() {
+  $('body,html').animate({scrollTop:0},700);
+  });
+  });
+  </script>
 
 
 
