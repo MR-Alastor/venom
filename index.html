@@ -191,31 +191,9 @@ window.onclick = function(event) {
 </script>
 <!-------------->
 
-<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  
-<script>
-$('body').append('<div class="upbtn"></div>');            
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-        $('.upbtn').css({
-            right: '-120px',
-            bottom: '-120px'
-        });
-        } else {
-        $('.upbtn').css({
-            right: '-220px',
-            bottom: '-220px'
-        });
-    }
-});
-$('.upbtn').on('click',function() {
-    $('html, body').animate({
-        scrollTop: 0
-    }, 500);
-    return false;
-});
-</script>
+<div class="up_md">
+<a onclick="$('html, body').animate({scrollTop:0},400)" title=""><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+</div>
 
 
 
