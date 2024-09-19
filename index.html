@@ -241,32 +241,16 @@ window.onclick = function(event) {
     }
   </script>
 
-<div id="toTop" >
-	<img src="img/top.png" alt="">
-</div>
-
-#toTop {
-padding:5px;
-position:fixed;
-bottom:10px; /* отступ кнопки от нижнего края страницы*/
-right:20px;
-cursor:pointer;
-display:none;
-}
-
 <script>
-	$(function() {
-		$(window).scroll(function() {
-			if($(this).scrollTop() != 0) {
-				$('#toTop').fadeIn();
-			} else {
-				$('#toTop').fadeOut();
-			}
-		});
-		$('#toTop').click(function() {
-			$('body,html').animate({scrollTop:0},800);
-		});
-	});
+const toTop = document.querySelector(".to-top");
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 100) {
+    toTop.classList.add("active");
+  } else {
+    toTop.classList.remove("active");
+  }
+})
 </script>
 
 </body>
