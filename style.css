@@ -462,7 +462,9 @@ p2 {
 button[disabled], html input[disabled] {
     cursor: default;
     font-size: 200%;
-    /* text-align: center; */
+	display: block;
+    width: 100%;
+    text-align: center;
     color: #ffa700 !important;
     text-shadow: 0px 1px #000, 0px 0px 10px #ff0500 !important;
 }
