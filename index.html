@@ -200,10 +200,10 @@ window.onclick = function(event) {
 <script>
     async function sendContact(ev) {
       ev.preventDefault();
-      const senderMessage1 = document
-        .getElementById('nick').value;
+      const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
+        .getElementById('nick').value;  <!--Пишем id поля input-->
        const senderMessage2 = document
-        .getElementById('input3').value;
+        .getElementById('input3').value;  
       const senderMessage = document
         .getElementById('itog').value;
       const webhookBody = {
@@ -211,7 +211,7 @@ window.onclick = function(event) {
           title: 'Тестовая форма отправки',
           fields: [{
               name: 'Тип товара:',
-              value: senderMessage1
+              value: senderMessage1 <!--Нумеруем поля чтобы результат приходил не один и тот же-->
             },
             {
               name: 'Выбранный второй чекбокс:',
@@ -241,6 +241,6 @@ window.onclick = function(event) {
   </script>
 
 
-<a href="#top" style="float:right">Back to Top</a>
+<a href="#top" style="float: right; text-align: center; background: rgb(28, 28, 28); border: 2px solid rgb(16, 16, 16); border-radius: 5px; color: rgb(173, 173, 173); padding: 5px 10px; box-shadow: rgb(98, 98, 98) 0px 0px 1px 0px inset;">▲</a>
 </body>
 </html>
