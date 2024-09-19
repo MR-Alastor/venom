@@ -790,6 +790,8 @@ img.log:hover {
 .social-icons2 {
   display: flex;
   justify-content: center;
+  text-align: center;
+  color: #fff;
 }
 
 .social-icons {
