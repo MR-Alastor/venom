@@ -650,6 +650,22 @@ img.log:hover {
     text-transform: uppercase;
 }
 
+
+.description2:hover {
+	font-family: 'Rubik One',sans-serif;
+	font-size: 35px;
+	background: #141414;
+	display: table;
+	margin: 20px auto;
+	color: #ff7e0b;
+	border-radius: 5px;
+	mix-blend-mode: normal;
+	padding: 5px 10px;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+
 .modal-content {
   width: 80%;
 }
