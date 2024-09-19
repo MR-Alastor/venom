@@ -611,7 +611,46 @@ background: linear-gradient(to bottom right, #ffad5b, #ff5a5a);
 
 
 	
+@media only screen
+and (max-width : 505px) {
+
+img.log {
+    position:relative;
+    width:100px;
+    height:100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transform: 1s;
+	transition: all 2.2s ease-in-out;
+}
+img.log:hover {
+  -o-transform: rotate(720deg);
+  -ms-transform: rotate(720deg);
+  -moz-transform: rotate(720deg);
+  -webkit-transform: rotate(720deg);
+  transform: rotate(720deg);
+}
+
+
+.description2 {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 35px;
+	transform: 1s;
+	transition: all 2.2s ease-in-out;
+    background: #525252;
+    display: table;
+    margin: 20px auto;
+    color: white;
+    border-radius: 5px;
+    mix-blend-mode: multiply;
+    padding: 5px 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
 	
+}
 	
 	
 	
