@@ -203,13 +203,13 @@ a.mainbtn:after {
 span:before {
     bottom: -2px;
     left: -2px;
-    background: #ffad5b;
+    background: none;
 }
 
 span:after {
     bottom: -2px;
     right: -2px;
-    background: #ffad5b;
+    background: none;
 }
 
 a:hover:before,
@@ -504,17 +504,22 @@ button[disabled], html input[disabled] {
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #ffffff!important;
   float: right;
+  text-shadow: 0 1px 0 #000000!important;
   font-size: 28px;
   font-weight: bold;
+  opacity: 0.5!important;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
   text-decoration: none;
   cursor: pointer;
+  color: #ff9a49!important;
+  text-decoration: none!important;
+  text-shadow: 1px 1px 1px black, 0 0 1em #cc6666!important;
+  transition: 1s!important;
 }
 
 
