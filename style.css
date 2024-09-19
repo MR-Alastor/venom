@@ -31,6 +31,10 @@ body {
 
 .description2 {font-family: 'Rubik One', sans-serif;font-size: 50px;background: #525252;display: table;margin: 20px auto;color: white;border-radius: 5px;mix-blend-mode: multiply;padding: 5px 10px;font-weight: 800;text-transform: uppercase;}
 
+
+.description2:hover {font-family: 'Rubik One', sans-serif;font-size: 50px;background: #141414;display: table;margin: 20px auto;color: #ff7e0b;border-radius: 5px; mix-blend-mode: normal; padding: 5px 10px;font-weight: 800;text-transform: uppercase;}
+
+
 .tz-gallery {
     padding: 40px;
 }
