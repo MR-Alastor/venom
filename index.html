@@ -241,20 +241,20 @@ window.onclick = function(event) {
   </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<div class="upbtn" id="top" onclick="toTop()"></div>
+<div id="upbtn" onclick="toTop()"></div>
 <script>
 $(document).ready(function(){
-    $("#top").hide();
+    $("#upbtn").hide();
     $(function toTop() {
         $(window).scroll(function () {
             if ($(this).scrollTop() > 100) {
-                $('#top').fadeIn();
+                $('#upbtn').fadeIn();
             } else {
-                $('#top').fadeOut();
+                $('#upbtn').fadeOut();
             }
         });
 
-        $('#top').click(function () {
+        $('#upbtn').click(function () {
             $('body,html').animate({
                 scrollTop: 0
             }, 800);
