@@ -201,14 +201,10 @@ a.mainbtn:after {
 }
 
 span:before {
-    bottom: -2px;
-    left: -2px;
     background: none;
 }
 
 span:after {
-    bottom: -2px;
-    right: -2px;
     background: none;
 }
 
