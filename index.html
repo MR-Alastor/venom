@@ -246,6 +246,8 @@ jQuery(($) => {
         .getElementById('nabor').value;  <!--Пишем id поля input-->
        const senderMessage2 = document
         .getElementById('radio-1').name;  
+		const senderMessage4 = document
+        .getElementById('radio-2').name; 
       const senderMessage = document
         .getElementById('itog').value;
       const webhookBody = {
@@ -259,6 +261,10 @@ jQuery(($) => {
               name: 'Выбранный второй чекбокс:',
               value: senderMessage2
             },      
+			 {
+              name: 'Выбранный второй чекбокс:',
+              value: senderMessage4
+            }, 
             {
               name: 'Сумма заказа:',
               value: senderMessage
