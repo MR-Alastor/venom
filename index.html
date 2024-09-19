@@ -46,15 +46,16 @@
    
 <form onsubmit="sendContact(event)" name="formText">
 
-              <h2 class="inp1">Выберите набор:</h2>     
+<h2 class="inp1">Выберите набор:</h2>     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><div class="select">
-    <input class="select__input" type="hidden" name="">
-    <div class="select__head">Выберите</div>
-    <ul class="select__list" style="display: none;">
-        <li class="select__item">Стилизация select CSS</li>
-        <li class="select__item">Стилизация select JavaScript</li>
-        <li class="select__item">Стилизация select, используя input</li>
-    </ul>
+
+<input class="select__input" type="hidden" id="nabor" name="">
+<div class="select__head">Выберите</div>
+<ul class="select__list" style="display: none;">
+<li class="select__item">Стилизация select CSS</li>
+<li class="select__item">Стилизация select JavaScript</li>
+<li class="select__item">Стилизация select, используя input</li>
+</ul>
 </div>
 			  <hr>
 <!--------------------------------------------------------------------------->
@@ -241,9 +242,9 @@ jQuery(($) => {
     async function sendContact(ev) {
       ev.preventDefault();
       const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
-        .getElementById('select-1726710270228').value;  <!--Пишем id поля input-->
+        .getElementById('nabor').value;  <!--Пишем id поля input-->
        const senderMessage2 = document
-        .getElementById('input3').value;  
+        .getElementById('radio-2').value;  
       const senderMessage = document
         .getElementById('itog').value;
       const webhookBody = {
