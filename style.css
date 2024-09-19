@@ -835,48 +835,9 @@ img.log:hover {
 }
 
 
-input:focus, textarea:focus {
-    padding: 4px 6px 20px 6px; 
-  }
-  input:focus + label, textarea:focus + label {
-    top: 100%;
-    margin-top: -16px;
-  }
 
 
-  input:focus + label, textarea:focus + label {
-    right: 0;
-    margin-right: 0;
-    width: 40%;
-    padding-top: 5px;
-  }
-}
 
-  input, textarea {
-    width: 100%;
-    border: 2px solid gray; 
-    background: none;
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    padding: 8px 12px;
-    outline: 0;
-    &:valid {
-      // Hides the label
-      background: white; 
-    }
-    &:focus {
-      border-color: #f06d06;
-    }
-    &:focus + label {
-      background: #f06d06;
-      color: white;
-      font-size: 70%;
-      padding: 1px 6px;
-      z-index: 2;
-      text-transform: uppercase;
-    }
-  }
+
 
 
