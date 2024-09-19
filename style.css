@@ -792,7 +792,24 @@ img.log:hover {
 
 
 
-
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+ 
+.social-icons a {
+  margin: 0 10px;
+}
+ 
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s;
+}
+ 
+.social-icons a:hover img {
+  transform: scale(1.2);
+}
 
 
 
