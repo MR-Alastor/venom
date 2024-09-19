@@ -520,6 +520,7 @@ button[disabled], html input[disabled] {
   text-decoration: none!important;
   text-shadow: 1px 1px 1px black, 0 0 1em #cc6666!important;
   transition: 1s!important;
+  opacity: 1.5!important;
 }
 
 
