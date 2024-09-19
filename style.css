@@ -765,3 +765,8 @@ img.log:hover {
 .select__list .select__item:hover {
     background-color: rgb(28 28 28 / 50%);
 }
+
+
+.fit-picture {
+  width: 100px;
+}
