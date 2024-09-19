@@ -656,26 +656,22 @@ img.log:hover {
 }
 	
 	
-#toTop {
-  display: block;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 48px;
+#top {
+  float:right;
+  width:39px;
+  margin-top:-35px; 
 }
-
-#toTop {
-  transition: all 0.5s ease 0s;
-  -moz-transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  opacity: 0.5;
-  display: none;
-  cursor: pointer;
+#top {
+    transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    opacity: 0.5;
+    display:none;
+    cursor: pointer;
 }
-
-#toTop:hover {
-  opacity: 1;
+#top:hover {
+    opacity: 1;
 }
 	
 	
