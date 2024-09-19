@@ -47,12 +47,11 @@
 <form onsubmit="sendContact(event)" name="formText">
 
               <h2 class="inp1">Выберите набор:</h2>     
-              <input type="text" style="b-popup-content2" placeholder="&nbspНик" class="form-control" id="nick" list="phonesList">
-			  <datalist id="phonesList">
-            <option value="Venom">35000</option>
-            <option value="Venom2">35000</option>
-			<option value="Venom2">35000</option>
-             </datalist>
+ <select style="b-popup-content2" class="form-control" name="select-1726710270228" id="select-1726710270228">
+            <option value="option-1" id="select-1726710270228-0">Option 1</option>
+            <option value="option-2" selected="true" id="select-1726710270228-1">Option 2</option>
+            <option value="option-3" id="select-1726710270228-2">Option 3</option>
+        </select>
 			  <hr>
 <!--------------------------------------------------------------------------->
 
@@ -202,7 +201,7 @@ window.onclick = function(event) {
     async function sendContact(ev) {
       ev.preventDefault();
       const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
-        .getElementById('nick').value;  <!--Пишем id поля input-->
+        .getElementById('select-1726710270228').value;  <!--Пишем id поля input-->
        const senderMessage2 = document
         .getElementById('input3').value;  
       const senderMessage = document
