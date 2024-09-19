@@ -492,7 +492,7 @@ button[disabled], html input[disabled] {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
   
   background-color: #121212!important;
   box-shadow: 0px 0px 5px 0px #ffb28b!important;
@@ -608,8 +608,6 @@ background: linear-gradient(to bottom right, #ffad5b, #ff5a5a);
 }
 
 
-
-
 	
 @media only screen
 and (max-width : 505px) {
@@ -649,6 +647,9 @@ img.log:hover {
     text-transform: uppercase;
 }
 
+.modal-content {
+  width: 80%;
+}
 	
 }
 	
