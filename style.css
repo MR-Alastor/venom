@@ -684,7 +684,7 @@ and (max-width : 505px) {
 p4 {
 	text-transform: uppercase;
 	letter-spacing: .5em;
-	font: 700 0.3em/1 "Oswald", sans-serif;
+	font: 700 0.9em/1 "Oswald", sans-serif;
 	display: block;
 	border: 0px double rgba(255,255,255,.25);
 	border-width: 0px 0;
@@ -694,7 +694,7 @@ p4 {
 	left: 50%;
 	width: 40em;
 	margin: 0 0 0 -20em;
-}
+  
   span {
 
   	font: 700 4em/1 "Oswald", sans-serif;
@@ -702,7 +702,25 @@ p4 {
   	padding: .25em 0 .325em;
 	display: block;
 	margin: 0 auto;
+
+/* Clip Background Image */
+
+	  background: url(https://mr-alastor.github.io/venom/sprites/animated-text-fill.png) repeat-y;
+	  -webkit-background-clip: text;
+	  background-clip: text;
+
+/* Animate Background Image */
+
+	  -webkit-text-fill-color: transparent;
+	  -webkit-animation: aitf 80s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-backface-visibility: hidden;
+
   }
+}
 }
 
 
