@@ -673,21 +673,6 @@ img.log:hover {
 
 
 
-p4 {
-	text-transform: uppercase;
-	letter-spacing: .5em;
-	font: 700 0.9em/1 "Oswald", sans-serif;
-	display: block;
-	border: 0px double rgba(255,255,255,.25);
-	border-width: 0px 0;
-	padding: 1.5em 0em;
-	position: relative;
-	top: 18%;
-	left: 50%;
-	width: 40em;
-	margin: 0 0 0 -20em;
-}
-  
 
 	
 }
@@ -852,7 +837,7 @@ p4 {
 p4 {
 	text-transform: uppercase;
 	letter-spacing: .5em;
-	font: 700 0.8em/1 "Oswald", sans-serif;
+	font: 700 0.9em/1 "Oswald", sans-serif;
 	display: block;
 	border: 0px double rgba(255,255,255,.25);
 	border-width: 0px 0;
