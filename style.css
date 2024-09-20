@@ -687,18 +687,15 @@ p4 {
 	display: block;
 	border: 0px double rgba(255,255,255,.25);
 	border-width: 0px 0;
-
 	position: relative;
 
-	width: 40em;
+
   
   span {
 
   	font: 700 2.5em/1 "Oswald", sans-serif!important;
-  	letter-spacing: 0;
-
 	display: block;
-	margin: 0 auto;
+
 
 /* Clip Background Image */
 
