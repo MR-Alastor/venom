@@ -682,9 +682,16 @@ and (max-width : 505px) {
 @media only screen
 and (max-width : 505px) {
 p4 {
-
-	display: none!important;
-
+	text-transform: uppercase;
+	letter-spacing: .5em;
+	display: block;
+	border: 0px double rgba(255,255,255,.25);
+	border-width: 0px 0;
+	padding: 1.5em 0em;
+	position: relative;
+	top: 18%;
+	left: 50%;
+	width: 40em;
   
   span {
 
