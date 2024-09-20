@@ -683,7 +683,7 @@ and (max-width : 505px) {
 and (max-width : 505px) {
 p4 {
 
-	display: block!important;
+	display: none!important;
 
 
 }
