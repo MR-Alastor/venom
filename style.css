@@ -855,7 +855,7 @@ p4 {
 
 /* Clip Background Image */
 
-	  background: url(https://mr-alastor.github.io/venom/animated-text-fill.png) repeat-y;
+	  background: url(https://mr-alastor.github.io/venom/sprites/animated-text-fill.png) repeat-y;
 	  -webkit-background-clip: text;
 	  background-clip: text;
 
