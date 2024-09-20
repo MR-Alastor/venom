@@ -667,12 +667,7 @@ img.log:hover {
 }
 
 
-.modal-content {
-  width: 80%;
-}
-	
-}
-
+.modal-content {width: 80%;}
 
 p4 {
 	text-transform: uppercase;
@@ -696,6 +691,11 @@ p4 {
 	  display: block;
 	  margin: 0 auto;
   	text-shadow: 0 0 80px rgba(255,255,255,.5);
+	
+}
+
+/*-------END------*/
+
 	
 /*--- Кнопка верх ---*/	
 #top {
