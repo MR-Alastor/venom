@@ -621,6 +621,7 @@ img.log {
     width:100px;
     height:100px;
     display: block;
+	margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     transform: 1s;
@@ -682,10 +683,38 @@ and (max-width : 505px) {
 @media only screen
 and (max-width : 505px) {
 p4 {
+	text-transform: uppercase;
 
-	display: none!important;
+
+	border: 0px double rgba(255,255,255,.25);
+	border-width: 0px 0;
 
 
+
+  
+  span {
+
+  	font: 700 4em/1 "Oswald", sans-serif;
+  	letter-spacing: 0;
+	margin: 0 auto;
+
+/* Clip Background Image */
+
+	  background: url(https://mr-alastor.github.io/venom/sprites/animated-text-fill.png) repeat-y;
+	  -webkit-background-clip: text;
+	  background-clip: text;
+
+/* Animate Background Image */
+
+	  -webkit-text-fill-color: transparent;
+	  -webkit-animation: aitf 80s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-backface-visibility: hidden;
+
+  }
 }
 
 
@@ -826,6 +855,7 @@ p4 {
 
 .fit-picture {
   width: 35px;
+  margin-top: 25px;
 }
 
 
