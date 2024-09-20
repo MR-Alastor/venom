@@ -594,7 +594,7 @@ button[disabled], html input[disabled] {
   color: #FFFFFF;
   text-transform: uppercase;
   cursor: pointer;
-  display: inline-block;
+  display: flex;
   font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size: 15px;
   font-weight: 500;
@@ -612,6 +612,8 @@ button[disabled], html input[disabled] {
   left: 50%;
   margin: 0px 0px 20px 0px;
   transform: translate(-50%, 0);
+  align-items: center;
+  text-indent: 3px;
 }
 
 
