@@ -676,7 +676,7 @@ img.log:hover {
 p4 {
 	text-transform: uppercase;
 	letter-spacing: .5em;
-	font: 700 0.5em/1 "Oswald", sans-serif;
+	font: 700 100.5em/1 "Oswald", sans-serif;
 	display: block;
 	border: 0px double rgba(255,255,255,.25);
 	border-width: 0px 0;
@@ -686,6 +686,7 @@ p4 {
 	left: 50%;
 	width: 40em;
 	margin: 0 0 0 -20em;
+}
   
   span {
 
@@ -695,7 +696,7 @@ p4 {
 	display: block;
 	margin: 0 auto;
   	text-shadow: 0 0 80px rgba(255,255,255,.5);
-
+  }
 
 
 
