@@ -719,6 +719,13 @@ p4 {
 
   }
 }
+
+
+.col-md-4 {
+      display:table-cell;
+       text-align: center;
+        vertical-align: middle;
+  }
 }
 
 
