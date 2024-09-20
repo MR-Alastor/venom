@@ -676,7 +676,7 @@ img.log:hover {
 p4 {
 	text-transform: uppercase;
 	letter-spacing: .5em;
-	font: 700 100.5em/1 "Oswald", sans-serif;
+	font: 700 0.9em/1 "Oswald", sans-serif;
 	display: block;
 	border: 0px double rgba(255,255,255,.25);
 	border-width: 0px 0;
@@ -688,18 +688,6 @@ p4 {
 	margin: 0 0 0 -20em;
 }
   
-  span {
-
-  	font: 700 4em/1 "Oswald", sans-serif;
-  	letter-spacing: 0;
-  	padding: .25em 0 .325em;
-	display: block;
-	margin: 0 auto;
-  	text-shadow: 0 0 80px rgba(255,255,255,.5);
-  }
-
-
-
 
 	
 }
@@ -880,8 +868,8 @@ p4 {
   	font: 700 4em/1 "Oswald", sans-serif;
   	letter-spacing: 0;
   	padding: .25em 0 .325em;
-	  display: block;
-	  margin: 0 auto;
+	display: block;
+	margin: 0 auto;
   	text-shadow: 0 0 80px rgba(255,255,255,.5);
 
 /* Clip Background Image */
