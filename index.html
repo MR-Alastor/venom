@@ -55,9 +55,10 @@
 </div>
 <hr>
 <!--2-->
-<div class="checkbox-wrapper-7">
-  <input class="tgl tgl-ios" id="cb2-7" type="checkbox"/>
-  <label class="tgl-btn" for="cb2-7">Текстовая запись</label>
+<div class="checkbox-wrapper-42">
+  <input id="cbx-42" type="checkbox" value="2"  name="radio2">
+  <label class="cbx" for="cbx-42"></label>
+  <label class="lbl" for="cbx-42">Magic</label>
 </div>
 
 <div class="form_radio">
@@ -80,99 +81,162 @@
 
 </div>
 
+<!---------Оформление чек бокса----->
 
-	
+
+
+
 <style>
-  .checkbox-wrapper-7 .tgl {
+  .checkbox-wrapper-42 input[type="checkbox"] {
     display: none;
-  }
-  .checkbox-wrapper-7 .tgl,
-  .checkbox-wrapper-7 .tgl:after,
-  .checkbox-wrapper-7 .tgl:before,
-  .checkbox-wrapper-7 .tgl *,
-  .checkbox-wrapper-7 .tgl *:after,
-  .checkbox-wrapper-7 .tgl *:before,
-  .checkbox-wrapper-7 .tgl + .tgl-btn {
-    box-sizing: border-box;
-  }
-  .checkbox-wrapper-7 .tgl::-moz-selection,
-  .checkbox-wrapper-7 .tgl:after::-moz-selection,
-  .checkbox-wrapper-7 .tgl:before::-moz-selection,
-  .checkbox-wrapper-7 .tgl *::-moz-selection,
-  .checkbox-wrapper-7 .tgl *:after::-moz-selection,
-  .checkbox-wrapper-7 .tgl *:before::-moz-selection,
-  .checkbox-wrapper-7 .tgl + .tgl-btn::-moz-selection,
-  .checkbox-wrapper-7 .tgl::selection,
-  .checkbox-wrapper-7 .tgl:after::selection,
-  .checkbox-wrapper-7 .tgl:before::selection,
-  .checkbox-wrapper-7 .tgl *::selection,
-  .checkbox-wrapper-7 .tgl *:after::selection,
-  .checkbox-wrapper-7 .tgl *:before::selection,
-  .checkbox-wrapper-7 .tgl + .tgl-btn::selection {
-    background: none;
-  }
-  .checkbox-wrapper-7 .tgl + .tgl-btn {
-    outline: 0;
-    display: block;
-    width: 4em;
-    height: 2em;
-    position: relative;
-    cursor: pointer;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-  }
-  .checkbox-wrapper-7 .tgl + .tgl-btn:after,
-  .checkbox-wrapper-7 .tgl + .tgl-btn:before {
-    position: relative;
-    display: block;
-    content: "";
-    width: 50%;
-    height: 100%;
-  }
-  .checkbox-wrapper-7 .tgl + .tgl-btn:after {
-    left: 0;
-  }
-  .checkbox-wrapper-7 .tgl + .tgl-btn:before {
-    display: none;
-  }
-  .checkbox-wrapper-7 .tgl:checked + .tgl-btn:after {
-    left: 50%;
+    visibility: hidden;
   }
 
-  .checkbox-wrapper-7 .tgl-ios + .tgl-btn {
-    background: #fbfbfb;
-    border-radius: 2em;
-    padding: 2px;
-    transition: all 0.4s ease;
-    border: 1px solid #e8eae9;
+  .checkbox-wrapper-42 label {
+    display: inline-block;
   }
-  .checkbox-wrapper-7 .tgl-ios + .tgl-btn:after {
-    border-radius: 2em;
-    background: #fbfbfb;
-    transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+
+  .checkbox-wrapper-42 .cbx {
+    position: relative;
+    top: 1px;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #c8ccd4;
+    border-radius: 3px;
+    vertical-align: middle;
+    transition: background 0.1s ease;
+    cursor: pointer;
   }
-  .checkbox-wrapper-7 .tgl-ios + .tgl-btn:hover:after {
-    will-change: padding;
+  .checkbox-wrapper-42 .cbx:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    width: 5px;
+    height: 11px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.3s ease;
+    transition-delay: 0.15s;
   }
-  .checkbox-wrapper-7 .tgl-ios + .tgl-btn:active {
-    box-shadow: inset 0 0 0 2em #e8eae9;
+  .checkbox-wrapper-42 .lbl {
+    margin-left: 5px;
+    vertical-align: middle;
+    cursor: pointer;
   }
-  .checkbox-wrapper-7 .tgl-ios + .tgl-btn:active:after {
-    padding-right: 0.8em;
+  .checkbox-wrapper-42 input[type="checkbox"]:checked ~ .cbx {
+    border-color: transparent;
+    background: #6871f1;
+    animation: jelly-42 0.6s ease;
   }
-  .checkbox-wrapper-7 .tgl-ios:checked + .tgl-btn {
-    background: #86d993;
+  .checkbox-wrapper-42 input[type="checkbox"]:checked ~ .cbx:after {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
   }
-  .checkbox-wrapper-7 .tgl-ios:checked + .tgl-btn:active {
-    box-shadow: none;
+  .checkbox-wrapper-42 .cntr {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
   }
-  .checkbox-wrapper-7 .tgl-ios:checked + .tgl-btn:active:after {
-    margin-left: -0.8em;
+  @-moz-keyframes jelly-42 {
+    from {
+      transform: scale(1, 1);
+    }
+    30% {
+      transform: scale(1.25, 0.75);
+    }
+    40% {
+      transform: scale(0.75, 1.25);
+    }
+    50% {
+      transform: scale(1.15, 0.85);
+    }
+    65% {
+      transform: scale(0.95, 1.05);
+    }
+    75% {
+      transform: scale(1.05, 0.95);
+    }
+    to {
+      transform: scale(1, 1);
+    }
+  }
+  @-webkit-keyframes jelly-42 {
+    from {
+      transform: scale(1, 1);
+    }
+    30% {
+      transform: scale(1.25, 0.75);
+    }
+    40% {
+      transform: scale(0.75, 1.25);
+    }
+    50% {
+      transform: scale(1.15, 0.85);
+    }
+    65% {
+      transform: scale(0.95, 1.05);
+    }
+    75% {
+      transform: scale(1.05, 0.95);
+    }
+    to {
+      transform: scale(1, 1);
+    }
+  }
+  @-o-keyframes jelly-42 {
+    from {
+      transform: scale(1, 1);
+    }
+    30% {
+      transform: scale(1.25, 0.75);
+    }
+    40% {
+      transform: scale(0.75, 1.25);
+    }
+    50% {
+      transform: scale(1.15, 0.85);
+    }
+    65% {
+      transform: scale(0.95, 1.05);
+    }
+    75% {
+      transform: scale(1.05, 0.95);
+    }
+    to {
+      transform: scale(1, 1);
+    }
+  }
+  @keyframes jelly-42 {
+    from {
+      transform: scale(1, 1);
+    }
+    30% {
+      transform: scale(1.25, 0.75);
+    }
+    40% {
+      transform: scale(0.75, 1.25);
+    }
+    50% {
+      transform: scale(1.15, 0.85);
+    }
+    65% {
+      transform: scale(0.95, 1.05);
+    }
+    75% {
+      transform: scale(1.05, 0.95);
+    }
+    to {
+      transform: scale(1, 1);
+    }
   }
 </style>
+	
+
 
 
 
