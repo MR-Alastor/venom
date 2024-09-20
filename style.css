@@ -683,17 +683,25 @@ and (max-width : 505px) {
 @media only screen
 and (max-width : 505px) {
 p4 {
-	text-transform: uppercase;
-
-
-
-
-
-
+	text-transform: uppercase!important;
+	letter-spacing: .5em!important;
+	display: block!important;
+	border: 0px double rgba(255,255,255,.25)!important;
+	border-width: 0px 0!important;
+	padding: 1.5em 0em!important;
+	position: relative!important;
+	top: 18%!important;
+	left: 50%!important;
+	width: 40em!important;
+	margin: 0 0 0 -20em!important;
   
   span {
 
-
+  	font: 700 0.5em/1 "Oswald", sans-serif!important;
+  	letter-spacing: 0!important;
+  	padding: .25em 0 .325em!important;
+	display: block!important;
+	margin: 0 auto!important;
 
 /* Clip Background Image */
 
