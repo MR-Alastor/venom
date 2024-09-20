@@ -684,7 +684,7 @@ and (max-width : 505px) {
 p4 {
 	text-transform: uppercase;
 	letter-spacing: .5em;
-	font: 700 0.2em/1 "Oswald", sans-serif;
+	font: 700 2.5em/1 "Oswald", sans-serif!important;
 	display: block;
 	border: 0px double rgba(255,255,255,.25);
 	border-width: 0px 0;
