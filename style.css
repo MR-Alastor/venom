@@ -686,17 +686,14 @@ p4 {
 	text-transform: uppercase;
 
 
-	border: 0px double rgba(255,255,255,.25);
-	border-width: 0px 0;
+
 
 
 
   
   span {
 
-  	font: 700 4em/1 "Oswald", sans-serif;
-  	letter-spacing: 0;
-	margin: 0 auto;
+
 
 /* Clip Background Image */
 
