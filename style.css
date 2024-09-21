@@ -5,11 +5,8 @@ body {
     padding: 40px 0;
 }
 
-#chetyre2:checked ~ .body {
+#chetyre:checked ~ .body  {
   background: yellow;
-}
-#chetyre3:checked ~ .body {
-  background: red;
 }
 
 
