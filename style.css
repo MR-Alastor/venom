@@ -5,12 +5,6 @@ body {
     padding: 40px 0;
 }
 
-#chetyre:checked ~ .body  {
-  background: yellow;
-}
-
-
-
 .container.gallery-container {
     background-color: #0000004f;
     color: #cdcdcd;
