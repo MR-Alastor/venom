@@ -73,28 +73,21 @@
 </div>
 <hr>
 <!--2-->
-<div class="checkbox-wrapper-42">
-  <input id="cbx-1" type="checkbox" value="100"  name="radio1">
-  <label class="cbx" for="cbx-1"></label>
-  <label class="lbl" for="cbx-42">Тестовая надпись</label>
-</div>
-
-<div class="checkbox-wrapper-42">
-  <input id="cbx-2" type="checkbox" value="200"  name="radio2">
-  <label class="cbx" for="cbx-2"></label>
-  <label class="lbl" for="cbx-42">Тестовая надпись</label>
-</div>
-
-<div class="checkbox-wrapper-42">
-  <input id="cbx-3" type="checkbox" value="300"  name="radio3">
-  <label class="cbx" for="cbx-3"></label>
-  <label class="lbl" for="cbx-42">Тестовая надпись</label>
-</div>
-
-<div class="checkbox-wrapper-42">
-  <input id="cbx-4" type="checkbox" value="400"  name="radio4">
-  <label class="cbx" for="cbx-4"></label>
-  <label class="lbl" for="cbx-42">Тестовая надпись</label>
+<div class="checkbox-wrapper-16">
+  <label class="checkbox-wrapper">
+    <input type="checkbox" class="checkbox-input" />
+    <span class="checkbox-tile">
+      <span class="checkbox-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none"></rect>
+          <polygon points="72 40 184 40 240 104 128 224 16 104 72 40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></polygon>
+          <polygon points="177.091 104 128 224 78.909 104 128 40 177.091 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></polygon>
+          <line x1="16" y1="104" x2="240" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+        </svg>
+      </span>
+      <span class="checkbox-label">Sketch</span>
+    </span>
+  </label>
 </div>
 <!--3-->
 <hr>
@@ -118,153 +111,101 @@
 
 
 <style>
-  .checkbox-wrapper-42 input[type="checkbox"] {
-    display: none;
-    visibility: hidden;
+ .checkbox-wrapper-16 *,
+  .checkbox-wrapper-16 *:after,
+  .checkbox-wrapper-16 *:before {
+    box-sizing: border-box;
   }
 
-  .checkbox-wrapper-42 label {
-    display: inline-block;
-  }
-
-  .checkbox-wrapper-42 .cbx {
-    position: relative;
-    top: 1px;
-    width: 17px;
-    height: 17px;
-    border: 1px solid #f14747;
-    border-radius: 4px;
-    vertical-align: middle;
-    transition: background 0.1s ease;
-    cursor: pointer;
-  }
-  .checkbox-wrapper-42 .cbx:after {
-    content: '';
+  .checkbox-wrapper-16 .checkbox-input {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+            clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
     position: absolute;
-    top: 1px;
-    left: 5px;
-    width: 5px;
-    height: 11px;
-    opacity: 0;
-    transform: rotate(45deg) scale(0);
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-    transition: all 0.3s ease;
-    transition-delay: 0.15s;
+    white-space: nowrap;
+    width: 1px;
   }
-  .checkbox-wrapper-42 .lbl {
-    margin-left: 5px;
-    vertical-align: middle;
-    cursor: pointer;
-	color: #fdd1aa;
+  .checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile {
+    border-color: #2260ff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #2260ff;
   }
-  .checkbox-wrapper-42 input[type="checkbox"]:checked ~ .cbx {
-    border-color: transparent;
-    background: #ff7a47;
-    animation: jelly-42 0.6s ease;
-  }
-  .checkbox-wrapper-42 input[type="checkbox"]:checked ~ .cbx:after {
+  .checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile:before {
+    transform: scale(1);
     opacity: 1;
-    transform: rotate(45deg) scale(1);
+    background-color: #2260ff;
+    border-color: #2260ff;
   }
-  .checkbox-wrapper-42 .cntr {
+  .checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-icon,
+  .checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-label {
+    color: #2260ff;
+  }
+  .checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile {
+    border-color: #2260ff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+  }
+  .checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile:before {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .checkbox-wrapper-16 .checkbox-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 7rem;
+    min-height: 7rem;
+    border-radius: 0.5rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.15s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  .checkbox-wrapper-16 .checkbox-tile:before {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 0.25rem;
+    left: 0.25rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.25s ease;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+  .checkbox-wrapper-16 .checkbox-tile:hover {
+    border-color: #2260ff;
+  }
+  .checkbox-wrapper-16 .checkbox-tile:hover:before {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .checkbox-wrapper-16 .checkbox-icon {
+    transition: 0.375s ease;
+    color: #494949;
+  }
+  .checkbox-wrapper-16 .checkbox-icon svg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .checkbox-wrapper-16 .checkbox-label {
+    color: #707070;
+    transition: 0.375s ease;
     text-align: center;
-  }
-  @-moz-keyframes jelly-42 {
-    from {
-      transform: scale(1, 1);
-    }
-    30% {
-      transform: scale(1.25, 0.75);
-    }
-    40% {
-      transform: scale(0.75, 1.25);
-    }
-    50% {
-      transform: scale(1.15, 0.85);
-    }
-    65% {
-      transform: scale(0.95, 1.05);
-    }
-    75% {
-      transform: scale(1.05, 0.95);
-    }
-    to {
-      transform: scale(1, 1);
-    }
-  }
-  @-webkit-keyframes jelly-42 {
-    from {
-      transform: scale(1, 1);
-    }
-    30% {
-      transform: scale(1.25, 0.75);
-    }
-    40% {
-      transform: scale(0.75, 1.25);
-    }
-    50% {
-      transform: scale(1.15, 0.85);
-    }
-    65% {
-      transform: scale(0.95, 1.05);
-    }
-    75% {
-      transform: scale(1.05, 0.95);
-    }
-    to {
-      transform: scale(1, 1);
-    }
-  }
-  @-o-keyframes jelly-42 {
-    from {
-      transform: scale(1, 1);
-    }
-    30% {
-      transform: scale(1.25, 0.75);
-    }
-    40% {
-      transform: scale(0.75, 1.25);
-    }
-    50% {
-      transform: scale(1.15, 0.85);
-    }
-    65% {
-      transform: scale(0.95, 1.05);
-    }
-    75% {
-      transform: scale(1.05, 0.95);
-    }
-    to {
-      transform: scale(1, 1);
-    }
-  }
-  @keyframes jelly-42 {
-    from {
-      transform: scale(1, 1);
-    }
-    30% {
-      transform: scale(1.25, 0.75);
-    }
-    40% {
-      transform: scale(0.75, 1.25);
-    }
-    50% {
-      transform: scale(1.15, 0.85);
-    }
-    65% {
-      transform: scale(0.95, 1.05);
-    }
-    75% {
-      transform: scale(1.05, 0.95);
-    }
-    to {
-      transform: scale(1, 1);
-    }
   }
 </style>
 	
