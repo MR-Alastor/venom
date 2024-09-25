@@ -770,9 +770,9 @@ p4 {
 }
 
 .select__head::after {
-    width: 10px;
-    height: 6px;
-    background: #303030;
+    width: 16px;
+    height: 16px;
+    background:  url(https://mr-alastor.github.io/venom/sprites/icons.png);
     position: absolute;
     right: 20px;
     bottom: 50%;
