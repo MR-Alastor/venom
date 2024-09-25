@@ -932,6 +932,7 @@ p4 {
 }
 
 .form-control {
-  width: 35%;
+    width: 100%!important;
+    height: 50px!important;
 	
 }
