@@ -925,3 +925,10 @@ p4 {
 
 
 .checkbox-wrapper-42 {display: inline-flex;width: 100%;max-width: 40rem;height: 50px;}
+
+.p5 {text-align: center;
+    color: rgba(35, 35, 35, .65);
+    font-family: "Nunito", Sans-serif;
+    font-size: 1em;
+    line-height: 1.7em;
+    display: block;}
