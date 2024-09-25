@@ -81,7 +81,35 @@
 
 
 
-   <script>
+  <form action="" method="POST">
+    <input type="text" name="text1" id="text1" class="sum" /><br />
+    <input type="text" name="text2" id="text2" class="sum" /> <br />
+      <select name="u1"  class="chkOptions">
+        <option value="0" selected="selected">нет</option>
+        <option value="120">1 упаковка</option>
+        <option value="240">2 упаковки</option>
+        <option value="300">3 упаковки</option>
+    </select>
+
+     <select name="u2"  class="chkOptions2">
+        <option value="0" selected="selected">нет</option>
+        <option value="121">4 упаковка</option>
+        <option value="245">5 упаковки</option>
+        <option value="302">6 упаковки</option>
+    </select>
+        <br />
+        <input type="checkbox" id="chk1" value="400" class="sum" /><label for="chk1">400</label> <br />
+        <input type="checkbox" id="chk2" value="100" class="sum" /><label for="chk2">100</label> <br />
+
+     <input type="checkbox" id="chk3" value="41" class="sale" /><label for="chk3">41%</label> <br />
+        <input type="checkbox" id="chk4" value="15" class="sale" /><label for="chk4">15%</label> <br />
+
+     <input type="checkbox" id="chk5" value="43" class="sale" /><label for="chk5">43%</label> <br />
+        <input type="checkbox" id="chk6" value="16" class="sale" /><label for="chk6">16%</label> <br />
+
+      Итого  <input type="text" name="text" id="text">
+    </form>
+    <script>
     $(function() {
     var calc = function() {
         var sum = 0;
