@@ -87,7 +87,7 @@
     $(function() {
     var calc = function() {
         var sum = 0;
-        $("select,.sum[type='text'],.sum:checked", fields).each(function() {
+        $("input,.sum[type='text'],.sum:checked", fields).each(function() {
             sum += +this.value||0
         });
         var sale = 0;
