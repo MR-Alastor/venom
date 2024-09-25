@@ -66,26 +66,22 @@
 
 	<input class="select__input" type="hidden" id="nabor" name="">
 	<div class="select__head">Выберите</div>
-	
-	<select class="select__list" style="display: none;">
-
-        <option class="select__item" value="0" selected="selected">нет</option>
-        <option class="select__item" value="121">4 упаковка</option>
-        <option class="select__item" value="245">5 упаковки</option>
-        <option class="select__item" value="302">6 упаковки</option>
-</select>
+	<ul class="select__list" style="display: none;">
+	<li class="select__item" data-val="150">Оформление Discord</li>
+	<li class="select__item" data-val="150">Оформление Twitch</li>
+	<li class="select__item" data-val="150">Оформление Youtube</li>
+	<li class="select__item" data-val="150">Оформление OBS</li>
+	<li class="select__item" data-val="150">Оформление Vk</li>
+</ul>
 </div>
 <hr>
 
 
-Итого  <input type="text" name="text" disabled="false" id="text">
 
 
 
 
 
-      
-    </form>
 	
     <script>
     $(function() {
@@ -148,7 +144,6 @@
 
 <button type="submit" class="btn btn-primary" id="ko">ОТПРАВИТЬ</button>
 <br><p2>ПРИМЕРНЫЙ ИТОГ:</p2> <input type="text" name="sumOut" disabled="false" value="" id="itog">
-
  </form> 
    
 
