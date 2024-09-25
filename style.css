@@ -501,7 +501,7 @@ button[disabled], html input[disabled] {
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
-  overflow: scroll!important;
+  
   background-color: #121212!important;
   box-shadow: 0px 0px 5px 0px #ffb28b!important;
 }
@@ -510,7 +510,6 @@ button[disabled], html input[disabled] {
 .close {
   color: #ffffff!important;
   float: right;
-  overflow: scroll!important;
   text-shadow: 0 1px 0 #000000!important;
   font-size: 28px;
   font-weight: bold;
@@ -926,3 +925,8 @@ p4 {
 
 
 .checkbox-wrapper-42 {display: inline-flex;width: 100%;max-width: 40rem;height: 50px;}
+
+
+.modal {
+    overflow: scroll !important;
+}
