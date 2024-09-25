@@ -60,18 +60,18 @@
 <form onsubmit="sendContact(event)" name="formText" >
 <!--1-->
 <p style="text-align: center; color: rgb(151 151 151); font-family: system-ui; font-size: 1em; line-height: 1.7em; display: block;">Отметь что хочешь оформить , после этого я свяжусь с тобой</p> 
-
+ <form action="" method="POST">
 <h2 class="inp1">Выберите набор:</h2>     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><div class="select">
 
 	<input class="select__input" type="hidden" id="nabor" name="">
 	<div class="select__head">Выберите</div>
 	<ul class="select__list" style="display: none;">
-	<li class="select__item" data-val="150">Оформление Discord</li>
-	<li class="select__item" data-val="150">Оформление Twitch</li>
-	<li class="select__item" data-val="150">Оформление Youtube</li>
-	<li class="select__item" data-val="150">Оформление OBS</li>
-	<li class="select__item" data-val="150">Оформление Vk</li>
+
+        <option class="select__item" value="0" selected="selected">нет</option>
+        <option class="select__item" value="121">4 упаковка</option>
+        <option class="select__item" value="245">5 упаковки</option>
+        <option class="select__item" value="302">6 упаковки</option>
 </ul>
 </div>
 <hr>
@@ -81,34 +81,9 @@
 
 
 
-  <form action="" method="POST">
-    <input type="text" name="text1" id="text1" class="sum" /><br />
-    <input type="text" name="text2" id="text2" class="sum" /> <br />
-      <select name="u1"  class="chkOptions">
-        <option value="0" selected="selected">нет</option>
-        <option value="120">1 упаковка</option>
-        <option value="240">2 упаковки</option>
-        <option value="300">3 упаковки</option>
-    </select>
 
-     <select name="u2"  class="chkOptions2">
-        <option value="0" selected="selected">нет</option>
-        <option value="121">4 упаковка</option>
-        <option value="245">5 упаковки</option>
-        <option value="302">6 упаковки</option>
-    </select>
-        <br />
-        <input type="checkbox" id="chk1" value="400" class="sum" /><label for="chk1">400</label> <br />
-        <input type="checkbox" id="chk2" value="100" class="sum" /><label for="chk2">100</label> <br />
-
-     <input type="checkbox" id="chk3" value="41" class="sale" /><label for="chk3">41%</label> <br />
-        <input type="checkbox" id="chk4" value="15" class="sale" /><label for="chk4">15%</label> <br />
-
-     <input type="checkbox" id="chk5" value="43" class="sale" /><label for="chk5">43%</label> <br />
-        <input type="checkbox" id="chk6" value="16" class="sale" /><label for="chk6">16%</label> <br />
-
-      Итого  <input type="text" name="text" id="text">
     </form>
+	
     <script>
     $(function() {
     var calc = function() {
