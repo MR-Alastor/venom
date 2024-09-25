@@ -77,7 +77,7 @@
 <hr>
 
 
-Итого  <input type="text" name="text" id="text">
+Итого  <input type="text" name="text" disabled="false" id="text">
 
 
 
@@ -90,7 +90,7 @@
     $(function() {
     var calc = function() {
         var sum = 0;
-        $("ul,.sum[type='text'],.sum:checked", fields).each(function() {
+        $("select,.sum[type='text'],.sum:checked", fields).each(function() {
             sum += +this.value||0
         });
         var sale = 0;
