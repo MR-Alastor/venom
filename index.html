@@ -81,66 +81,23 @@
 
 
 
-
-
-<form action="" method="POST">
-  <select name="u1"  class="chkOptions">
-            <option value="0" selected="selected">нет</option>
-    <option value="120">1 упаковка</option>
-    <option value="240">2 упаковки</option>
-    <option value="300">3 упаковки</option>
-</select>
- 
- <select name="u2"  class="chkOptions2">
-            <option value="0" selected="selected">нет</option>
-    <option value="121">4 упаковка</option>
-    <option value="245">5 упаковки</option>
-    <option value="302">6 упаковки</option>
-</select>
- 
-    <input type="checkbox" id="chk1" value="4" class="sum" /><label for="chk1">4%</label> <br />
-    <input type="checkbox" id="chk2" value="10" class="sum" /><label for="chk2">10%</label> <br />
- 
- <input type="checkbox" id="chk3" value="41" class="sum" /><label for="chk3">41%</label> <br />
-    <input type="checkbox" id="chk4" value="15" class="sum" /><label for="chk4">15%</label> <br />
- 
- <input type="checkbox" id="chk5" value="43" class="sum" /><label for="chk5">43%</label> <br />
-    <input type="checkbox" id="chk6" value="16" class="sum" /><label for="chk6">16%</label> <br />
- 
-  Итого  <input type="text" name="text" id="text">  
-</form>
-<script>
-$(function() {
+   <script>
+    $(function() {
     var calc = function() {
-          var sum = 0;
-          fields.each(function() {
-              var el = $(this),
-                  type = el.attr("type");
- 
-              if ((type == "text") || (type == "checkbox" && el.attr("checked"))) {
-                  sum += parseInt($(this).val(), 10) || 0;
-              }
-              $('#text').val(sum);
- 
-          });//end each
-        },//end calc
- 
-        fields = $(".sum");
- 
-    fields.change(calc);
- 
+        var sum = 0;
+        $("select,.sum[type='text'],.sum:checked", fields).each(function() {
+            sum += +this.value||0
+        });
+        var sale = 0;
+        $(".sale:checked", fields).each(function() {
+            sale += +this.value
+        });
+        $("#text").val((sum - sum * sale / 100).toFixed(2))
+    };
+    fields = $("form");
+    fields.on('input change',calc)
 });
-</script>
-
-
-
-
-
-
-
-
-
-
+    </script>
 
 
 
