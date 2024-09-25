@@ -67,11 +67,11 @@
 	<input class="select__input" type="hidden" id="nabor" name="">
 	<div class="select__head">Выберите</div>
 	<ul class="select__list" style="display: none;">
-	<li class="select__item" data-value="666">Оформление Discord</li>
-	<li class="select__item" value="667">Оформление Twitch</li>
-	<li class="select__item" value="668">Оформление Youtube</li>
-	<li class="select__item" value="669">Оформление OBS</li>
-	<li class="select__item" value="700">Оформление Vk</li>
+	<li class="select__item" data-val="150">Оформление Discord</li>
+	<li class="select__item" data-val="150">Оформление Twitch</li>
+	<li class="select__item" data-val="150">Оформление Youtube</li>
+	<li class="select__item" data-val="150">Оформление OBS</li>
+	<li class="select__item" data-val="150">Оформление Vk</li>
 </ul>
 </div>
 <hr>
@@ -420,6 +420,39 @@ jQuery(($) => {
         }
     });
 });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.select__input').forEach(e => e.addEventListener('click', calc) );
+
+function calc(e) {
+	let summ = this.querySelector('.summ');
+	if (e.target.dataset.id) {
+		let new_div = `<div>${e.target.outerHTML.replace(/option/g,'span')}<span class="close">X</span></div>`;
+		e.target.disabled = true;
+		this.querySelector('.list').insertAdjacentHTML('beforeEnd', new_div);
+		summ.textContent = +this.querySelector('.summ').textContent + +e.target.dataset.val;
+	}
+	if (e.target.classList.contains('close')) {
+		let data_val = +e.target.previousElementSibling.dataset.val;
+		this.querySelector(`[data-val="${data_val}"]`).disabled = false;
+		e.target.closest('div').remove();
+		summ.textContent = +this.querySelector('.summ').textContent - data_val;
+	}
+	document.querySelector('.total_span').textContent = [...document.querySelectorAll('.summ')].map(e => +e.textContent).reduce((a,b) => a + b);
+}
 </script>
 
 
