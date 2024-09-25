@@ -114,12 +114,6 @@ body {
 
 
 
-
-
-
-
-
-
 img.log {
     position:relative;
     width:250px;
@@ -939,3 +933,13 @@ p4 {
     height: 50px!important;
 	
 }
+
+@media only screen
+and (max-width : 1000px) {
+
+.lv {width: 80%!important;transition: all 2.2s ease-in-out;}
+
+	
+}
+
+.lv {text-align: center;color: rgb(151 151 151);font-family: system-ui;font-size: 0.9em;line-height: 1.7em;display: block;border-radius: 5px;width: 50%;background: #161616;border: solid 1px #000000;margin-left: auto;margin-right: auto;transition: all 2.2s ease-in-out;box-shadow: inset 0px 0px 3px 0px #3c3c3c;}
