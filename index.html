@@ -60,11 +60,15 @@
 <form onsubmit="sendContact(event)" name="formText" >
 <!--1-->
 <p style="text-align: center; color: rgb(151 151 151); font-family: system-ui; font-size: 1em; line-height: 1.7em; display: block;">Отметь что хочешь оформить , после этого я свяжусь с тобой</p> 
- <form action="" method="POST">
-<h2 class="inp1">Выберите набор:</h2>     
+
+
+<form action="" method="POST">
+
+<h2 class="inp1">Выберите набор:</h2>  
+   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><div class="select">
 
-	<input class="select__input" type="hidden" id="nabor" name="">
+	<input class="select__input" type="text" id="nabor" name="">
 	<div class="select__head">Выберите</div>
 	<ul class="select__list" style="display: none;">
 	<li class="select__item" value="120">Оформление Discord</li>
