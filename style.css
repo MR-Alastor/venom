@@ -928,10 +928,10 @@ p4 {
 
 
 .modal {
-    overflow: scroll !important;
+    overflow: scroll!important;
 }
 
 .form-control {
-  width: 35%!important;
+  width: 35%;
 	
 }
