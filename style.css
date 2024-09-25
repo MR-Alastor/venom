@@ -510,6 +510,7 @@ button[disabled], html input[disabled] {
 .close {
   color: #ffffff!important;
   float: right;
+  overflow: scroll!important;
   text-shadow: 0 1px 0 #000000!important;
   font-size: 28px;
   font-weight: bold;
