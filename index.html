@@ -68,7 +68,7 @@
    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><div class="select">
 
-	<input class="select__input" type="text" name="text2" id="text2">
+	<input class="select__input" type="hidden" id="nabor" name="">
 	<div class="select__head">Выберите</div>
 	<ul class="select__list" style="display: none;">
 	<li class="select__item" value="120">Оформление Discord</li>
@@ -91,7 +91,7 @@
     $(function() {
     var calc = function() {
         var sum = 0;
-        $("select,.sum[type='text'],.sum:checked", fields).each(function() {
+        $("select__item,.sum[type='text'],.sum:checked", fields).each(function() {
             sum += +this.value||0
         });
         var sale = 0;
