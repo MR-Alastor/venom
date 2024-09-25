@@ -106,27 +106,40 @@
  
  
  
- <label style="b-popup-content2"><span>Name</span> <input /></label>
-<label><span>E-Mail</span> <input /></label>
-<label><span>Comment</span> <textarea></textarea></label>
+<div class="main">
+
+   <div class="field">
+
+      <label for="n">Имя</label>
+
+      <input type="text" id="n" />
+
+   </div>
+
+   <div class="field">
+
+      <label for="ln">Фамилия</label>
+
+      <input type="text" id="ln" />
+
+   </div>
+
+   <div class="field">
+
+      <label for="a">Место жительства</label>
+
+      <input type="text" id="a" />
+
+   </div>
+
+</div>
  
  <style>
- label {
-  display: block;
-  position: relative;
-}
+.field {clear:both; text-align:right;}
 
-label span {
-  font-weight: bold;
-  position: absolute;
-  left: 3px;
-}
+label {float:left;}
 
-label input,
-label textarea,
-label select {
-  margin-left: 120px;
-}
+.main {float:left}
 </style>
  
 <input type="text" style="b-popup-content2" placeholder="&nbspНеобходимые арты:" class="form-control" id="input3">
