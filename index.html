@@ -65,34 +65,32 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><div class="select">
 
 	<input class="select__input" type="hidden" id="nabor" name="">
-
-<div class="select__head">Выберите</div>
-<select class="select__list" style="display: none;">
+	<div class="select__head">Выберите</div>
+	<ul class="select__list" style="display: none;">
 
         <option class="select__item" value="0" selected="selected">нет</option>
         <option class="select__item" value="121">4 упаковка</option>
         <option class="select__item" value="245">5 упаковки</option>
         <option class="select__item" value="302">6 упаковки</option>
-</select>
-
+</ul>
 </div>
 <hr>
 
 
-
+Итого  <input type="text" name="text" id="text">
 
 
 
 
 
       
-
+    </form>
 	
     <script>
     $(function() {
     var calc = function() {
         var sum = 0;
-        $("select,.sum[type='text'],.sum:checked", fields).each(function() {
+        $("ul,.sum[type='text'],.sum:checked", fields).each(function() {
             sum += +this.value||0
         });
         var sale = 0;
@@ -148,7 +146,7 @@
 
 
 <button type="submit" class="btn btn-primary" id="ko">ОТПРАВИТЬ</button>
-<br> Итого  <input type="text" name="text" id="text">
+<br><p2>ПРИМЕРНЫЙ ИТОГ:</p2> <input type="text" name="sumOut" disabled="false" value="" id="itog">
 
  </form> 
    
