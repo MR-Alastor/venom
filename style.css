@@ -937,7 +937,7 @@ p4 {
 @media only screen
 and (max-width : 1000px) {
 
-.lv {width: 80%!important;transition: all 2.2s ease-in-out;}
+.lv {width: 100%!important;transition: all 2.2s ease-in-out;}
 
 	
 }
