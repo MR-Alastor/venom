@@ -77,6 +77,59 @@
 <hr>
 
 
+
+
+
+
+
+
+    <script>
+
+    $(function() {
+
+    var calc = function() {
+
+        var sum = 0;
+
+        $("select,.sum[type='text'],.sum:checked", fields).each(function() {
+
+            sum += +this.value||0
+
+        });
+
+        var sale = 0;
+
+        $(".sale:checked", fields).each(function() {
+
+            sale += +this.value
+
+        });
+
+        $("#text").val((sum - sum * sale / 100).toFixed(2))
+
+    };
+
+    fields = $("form");
+
+    fields.on('input change',calc)
+
+});
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--2-->
 <h2 class="inp1">Доп.функции к набору:</h2>  
 <div class="checkbox-wrapper-42">
