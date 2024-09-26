@@ -453,12 +453,12 @@ jQuery(($) => {
 		const senderMessage4 = document
         .getElementById('cbx-3').value; 
       const senderMessage = document
-        .getElementById('cbx-4').name;
+        .getElementById('cbx-4').value;
       const webhookBody = {
         embeds: [{
           title: 'Тестовая форма отправки',
           fields: [{
-            
+              name: '```Тип товара:```',
               name: senderMessage1 <!--Нумеруем поля чтобы результат приходил не один и тот же-->
             },
             {
