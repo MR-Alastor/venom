@@ -289,6 +289,7 @@ input[type="number"]::-webkit-inner-spin-button,
 	margin-right:auto!important;
 	margin-top: 25px!important;
     padding: 6px 12px!important;
+	outline: none!important;
     margin-bottom: 0!important;
     font-size: 14px!important;
     font-weight: 400!important;
