@@ -759,11 +759,10 @@ outline: none;
 
 .select__head {
     width: 100%;
-	background:#303030;
-	border: solid 2px #0e0e0e;
-	box-shadow: inset 0px 0px 5px 0px #606060 !important;
+    background: #202020;
+    border: solid 1px #4a4a4a;
+    box-shadow: inset 0px 0px 5px 0px #000000 !important;
     max-width: 100%;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     padding: 14px 15px;
     font-size: 14px;
     line-height: 18px;
