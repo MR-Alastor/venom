@@ -68,7 +68,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><div class="select">
 
 
-<select name="u1"  class="select__head">
+<select id="u3" name="u1"  class="select__head">
     <option  selected="selected">...</option>
 	<option id="ds" value="Оформление Discord" >Оформление Discord</option>
 	<option id="tw" value="Оформление Twitch">Оформление Twitch</option>
@@ -447,7 +447,7 @@ jQuery(($) => {
     async function sendContact(ev) {
       ev.preventDefault();
       const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
-        .getElementById('ds').value;  <!--Пишем id поля input-->
+        .getElementById('u3').value;  <!--Пишем id поля input-->
        const senderMessage2 = document
         .getElementById('cbx-1').value;  
 		const senderMessage4 = document
