@@ -57,7 +57,7 @@
 
    
 <form onsubmit="sendContact(event)" name="formText" >
-<!--Выпадающее меню-->
+<!--Выпадающее меню------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <p style="text-align: center; color: rgb(151 151 151); font-family: system-ui; font-size: 1em; line-height: 1.7em; display: block;">Отметь что хочешь оформить , после этого я свяжусь с тобой</p> 
 
 
@@ -65,7 +65,9 @@
 
 <h2 class="inp1">Выберите набор:</h2>  
    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><div class="select">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="select">
 
 
 <select name="u1"  id="selectbox1">
@@ -76,14 +78,80 @@
 	<option value="150">Оформление OBS</option>
 	<option value="150">Оформление Vk<option>
 </select>
+
 </div>
 <hr>
 
+<script>
+// Iterate over each select element
+$('select').each(function () {
+
+    // Cache the number of options
+    var $this = $(this),
+        numberOfOptions = $(this).children('option').length;
+
+    // Hides the select element
+    $this.addClass('s-hidden');
+
+    // Wrap the select element in a div
+    $this.wrap('<div class="select"></div>');
+
+    // Insert a styled div to sit over the top of the hidden select element
+    $this.after('<div class="styledSelect"></div>');
+
+    // Cache the styled div
+    var $styledSelect = $this.next('div.styledSelect');
+
+    // Show the first select option in the styled div
+    $styledSelect.text($this.children('option').eq(0).text());
+
+    // Insert an unordered list after the styled div and also cache the list
+    var $list = $('<ul />', {
+        'class': 'options'
+    }).insertAfter($styledSelect);
+
+    // Insert a list item into the unordered list for each select option
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+
+    // Cache the list items
+    var $listItems = $list.children('li');
+
+    // Show the unordered list when the styled div is clicked (also hides it if the div is clicked again)
+    $styledSelect.click(function (e) {
+        e.stopPropagation();
+        $('div.styledSelect.active').each(function () {
+            $(this).removeClass('active').next('ul.options').hide();
+        });
+        $(this).toggleClass('active').next('ul.options').toggle();
+    });
+
+    // Hides the unordered list when a list item is clicked and updates the styled div to show the selected list item
+    // Updates the select element to have the value of the equivalent option
+    $listItems.click(function (e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        /* alert($this.val()); Uncomment this for demonstration! */
+    });
+
+    // Hides the unordered list when clicking outside of it
+    $(document).click(function () {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
+
+});
+</script>
 
 
 
-
-<!--2-->
+<!--2------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 <h2 class="inp1">Доп.функции к набору:</h2>  
 <div class="checkbox-wrapper-42">
   <input id="cbx-1" type="checkbox" value="100"  name="radio1" class="sum">
