@@ -745,6 +745,7 @@ p4 {
 .select {
     position: relative;
     display: block;
+    outline: none;
     min-width: 220px;
     width: 100%;
     max-width: 100%;
@@ -825,7 +826,7 @@ p4 {
     list-style-type: none;
 }
 
-.select__list .select__item:hover {
+.select__list .select__head .select__item:hover {
     background-color: rgb(28 28 28 / 50%);
 }
 
