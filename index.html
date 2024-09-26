@@ -423,21 +423,19 @@ jQuery(($) => {
 
 <!----Скрипт подсчета---->
 <script>
-    $(function() {
-    var calc = function() {
-        var sum = 0;
-        $("select,.sum[type='text'],.sum:checked", fields).each(function() {
-            sum += +this.value||0
-        });
-        var sale = 0;
-        $(".sale:checked", fields).each(function() {
-            sale += +this.value
-        });
-        $("#text").val((sum - sum * sale / 100).toFixed(2))
-    };
-    fields = $("form");
-    fields.on('input change',calc)
-});
+document.formText.onchange = function(e) {
+  if (!e.target.tagName.type && e.target.tagName.type == 'radio')
+    return;
+
+  var sum = 0;
+
+  [].slice.call( this.querySelectorAll('input[type=radio]') ).forEach(function(item) {
+    item.checked && (sum += +item.value);
+  });
+
+  this.elements.sumOut.value = sum;
+};
+
 </script>
 
 
