@@ -68,13 +68,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><div class="select">
 
 
-<select name="u1"  class="summary">
-    <option  selected="selected">нет</option>
-	<option class="select__item" value="120">Оформление Discord</li>
-	<option class="select__item" value="150">Оформление Twitch</li>
-	<option class="select__item" value="150">Оформление Youtube</li>
-	<option class="select__item" value="150">Оформление OBS</li>
-	<option class="select__item" value="150">Оформление Vk</li>
+<select>
+	<option value="-1">Рост</option>
+	<option value="150 см">150 см</option>
+	<option value="151 см">151 см</option>
+	<option value="152 см">152 см</option>
+	<option value="153 см">153 см</option>
+	<option value="154 см">154 см</option>
+	<option value="155 см">155 см</option>
 </select>
 </div>
 <hr>
@@ -88,152 +89,247 @@
 
 
 
-
-
-
-
-
-
-
-
 <style>
-details {
-	position: relative;
-	width: 300px;
-	margin-right: 1rem;
+*{
+    padding: 0;
+    margin: 0;
 }
 
-details[open] {
-	z-index: 1;
-}
-
-summary {
-	padding: 1rem;
+.jq-selectbox {
+	vertical-align: middle;
 	cursor: pointer;
-	border-radius: 5px;
-	background-color: #ddd;
-	list-style: none;
+    width: 300px;
+    position: relative;
 }
-
-summary::-webkit-details-marker {
-	display: none;
+.jq-selectbox select{
+  display: none;
 }
-
-details[open] summary:before {
-	content: '';
+.jq-selectbox__select {
+	height: 30px;
+    line-height: 30px;
+	padding: 0 45px 0 10px;
+	border: 1px solid #CCC;
+	border-bottom-color: #B3B3B3;
+	border-radius: 4px;
+	background: #F5F5F5 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAeCAIAAABi9+OQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi+v//PxM2zMDAQEtxgAADAF2uTe9L4getAAAAAElFTkSuQmCC) repeat-x;
+	box-shadow: inset 1px -1px #F1F1F1, inset -1px 0 #F1F1F1, 0 1px 2px rgba(0,0,0,0.1);
+	text-shadow: 1px 1px #FFF;
+	font-size: 16px;	
+    font-family: 'segoe ui';
+	color: #9D9D9D;	
+	background: #fff;
+	border: 1px solid #3399CC;
+}
+/*.jq-selectbox__select:hover {
+	background-color: #E6E6E6;
+	background-position: 0 -10px;
+}*/
+.jq-selectbox__select:active {
+	background: #F5F5F5;
+	box-shadow: inset 1px 1px 3px #DDD;
+}
+.jq-selectbox.focused .jq-selectbox__select {
+	border: 1px solid #5794BF;
+}
+.jq-selectbox.disabled .jq-selectbox__select {
+	border-color: #CCC;
+	background: #F5F5F5;
+	box-shadow: none;
+	color: #888;
+}
+.jq-selectbox__select-text {
 	display: block;
-	width: 100vw;
-	height: 100vh;
-	background: transparent;
-	position: fixed;
-	top: 0;
-	left: 0;
-}
-
-summary:after {
-	content: '';
-	display: inline-block;
-	float: right;
-	width: .5rem;
-	height: .5rem;
-	border-bottom: 1px solid currentColor;
-	border-left: 1px solid currentColor;
-	border-bottom-left-radius: 2px;
-	transform: rotate(45deg) translate(50%, 0%);
-	transform-origin: center center;
-	transition: transform ease-in-out 100ms
-}
-
-summary:focus {
-	outline: none;
-}
-
-details[open] summary:after {
-	transform: rotate(-45deg) translate(0%, 0%);
-}
-
-ul {
 	width: 100%;
-	background: #ddd;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.jq-selectbox .placeholder {
+	color: #888;
+}
+.jq-selectbox__trigger {
 	position: absolute;
-	top: calc(100% + .5rem);
-	left: 0;
-	padding: 1rem;
-	margin: 0;
-	box-sizing: border-box;
-	border-radius: 5px;
-	max-height: 200px;
-	overflow-y: auto;
+	top: 0;
+	right: 0;
+	width: 34px;
+	height: 100%;	
 }
-
-li {
-	margin: 0;
-	padding: 1rem 0;
-	border-bottom: 1px solid #ccc;
+.jq-selectbox__trigger-arrow {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border-top: 9px solid #3399CC;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	opacity: 0.3;
+	filter: alpha(opacity=30);
 }
-
-li:first-child {
-	padding-top: 0;
+.jq-selectbox:hover .jq-selectbox__trigger-arrow {
+	opacity: 1;
+	filter: alpha(opacity=100);
 }
-
-li:last-child {
-	padding-bottom: 0;
-	border-bottom: none;
+.jq-selectbox.disabled .jq-selectbox__trigger-arrow {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
 }
-
-/* FAKE SELECT */
-
-summary.radios {
-	counter-reset: radios;
-}
-
-summary.radios:before {
-	content: var(--selection);
-}
-
-input[type=radio] {
-	counter-increment: radios;
-	appearance: none;
-	display: none;
-}
-
-input[type=radio]:checked {
-	display: inline;
-	--display: block;
-}
-
-input[type=radio]:after {
-	content: attr(title);
-	display: inline;
-	font-size: 1rem;
-}
-
-ul.list {
-	counter-reset: labels;
-}
-
-label {
+.jq-selectbox__dropdown {
+	top: 33px;
 	width: 100%;
-	display: flex;
-	cursor: pointer;
-	justify-content: space-between;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	background: #FFF;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+	font: 14px/18px Arial, sans-serif;
 }
-
-label span {
-	--display: none;
-	display: var(--display);
-	width: 1rem;
-	height: 1rem;
-	border: 1px solid #727272;
+.jq-selectbox__search {
+	margin: 5px;
+}
+.jq-selectbox__search input {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0;
+	padding: 5px 27px 6px 8px;
+	outline: none;
+	border: 1px solid #CCC;
 	border-radius: 3px;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAO1JREFUeNqU078LAXEYx/FzYfNzk5TJaFNKYjFYSQZ/hvwBsvg1UCY2xT9gM8hukQGThWRjkcFw3pdnujhfT736Xn2fPvfc3fd07V0OFDDFAnM0ENYsZRiGLSc9OpqIYIA9fMhhjCrW2h9VlMlcH/aymMGtOqEugX08PwQucUZKdTozMIqdTc9WepQD7wjY9ARx+ydwhfyXfS+S0qMcOEQJGcueB3VccFINdMgal6NzkmPjRwJXxDBB7/2RDdtAp6wb+dpphHDASG5QQ0V6u2aoSqBZD/lDrNWRJynLK2qpBn4rc6K2XB9/Nb8EGABtf1thzY6X2AAAAABJRU5ErkJggg==) no-repeat 100% 50%;
+	box-shadow: inset 1px 1px #F1F1F1;
+	color: #333;
+	-webkit-appearance: textfield;
+}
+.jq-selectbox__search input::-webkit-search-cancel-button,
+.jq-selectbox__search input::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+.jq-selectbox__not-found {
+	margin: 5px;
+	padding: 5px 8px 6px;
+	background: #F0F0F0;
+	font-size: 13px;
+}
+.jq-selectbox ul {
+	margin: 0;
+	padding: 0;
+}
+.jq-selectbox li {
+	min-height: 18px;
+	padding: 5px 10px 6px;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	     -o-user-select: none;
+	white-space: nowrap;
+	color: #231F20;
+}
+.jq-selectbox li.selected {
+	background-color: #A3ABB1;
+	color: #FFF;
+}
+.jq-selectbox li:hover {
+	background-color: #EEEEEE;
+	color: #000;
+}
+.jq-selectbox li.disabled {
+	color: #AAA;
+}
+.jq-selectbox li.disabled:hover {
+	background: none;
+}
+.jq-selectbox li.optgroup {
+	font-weight: bold;
+}
+.jq-selectbox li.optgroup:hover {
+	background: none;
+	color: #231F20;
+	cursor: default;
+}
+.jq-selectbox li.option {
+	padding-left: 25px;
 }
 
-</style>
+
+.jq-select-multiple {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 1px;
+	border: 1px solid #CCC;
+	border-bottom-color: #B3B3B3;
+	border-radius: 4px;
+	box-shadow: inset 1px 1px #F1F1F1, 0 1px 2px rgba(0,0,0,0.1);
+	background: #FFF;
+	color: #333;
+	font: 14px/18px Arial, sans-serif;
+	cursor: default;
+}
+.jq-select-multiple.focused {
+	border: 1px solid #5794BF;
+}
+.jq-select-multiple.disabled {
+	border-color: #CCC;
+	background: #F5F5F5;
+	box-shadow: none;
+	color: #888;
+}
+.jq-select-multiple ul {
+	margin: 0;
+	padding: 0;
+}
+.jq-select-multiple li {
+	padding: 3px 9px 4px;
+	list-style: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	     -o-user-select: none;
+	        user-select: none;
+	white-space: nowrap;
+}
+.jq-select-multiple li:first-child {
+	border-radius: 3px 3px 0 0;
+}
+.jq-select-multiple li:last-child {
+	border-radius: 0 0 3px 3px;
+}
+.jq-select-multiple li.selected {
+	background: #08C;
+	color: #FFF;
+}
+.jq-select-multiple li.disabled {
+	color: #AAA;
+}
+.jq-select-multiple.disabled li.selected,
+.jq-select-multiple li.selected.disabled {
+	background: #CCC;
+	color: #FFF;
+}
+.jq-select-multiple li.optgroup {
+	font-weight: bold;
+}
+.jq-select-multiple li.option {
+	padding-left: 25px;
+}
+</style> 
 
 
 
 
 
+
+
+<script>
+$('select').styler({
+	selectSearch: true
+});
+</script>
 
 
 
