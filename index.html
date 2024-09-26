@@ -71,10 +71,10 @@
 <select name="u1"  class="select__head">
     <option  selected="selected">...</option>
 	<option name="ds" value="120">Оформление Discord</option>
-	<option id="tw" value="150">Оформление Twitch</option>
-	<option id="yt" value="150">Оформление Youtube</option>
-	<option id="obs" value="150">Оформление OBS</option>
-	<option id="vk" value="150">Оформление VK</option>
+	<option name="tw" value="150">Оформление Twitch</option>
+	<option name="yt" value="150">Оформление Youtube</option>
+	<option name="obs" value="150">Оформление OBS</option>
+	<option name="vk" value="150">Оформление VK</option>
 </select>
 </div>
 <hr>
@@ -449,11 +449,11 @@ jQuery(($) => {
       const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
         .getElementById('ds').value;  <!--Пишем id поля input-->
        const senderMessage2 = document
-        .getElementById('radio-1').name;  
+        .getElementById('tw').name;  
 		const senderMessage4 = document
-        .getElementById('radio-2').name; 
+        .getElementById('yt').name; 
       const senderMessage = document
-        .getElementById('itog').value;
+        .getElementById('obs').value;
       const webhookBody = {
         embeds: [{
           title: 'Тестовая форма отправки',
