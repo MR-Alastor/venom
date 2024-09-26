@@ -68,6 +68,8 @@
    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><div class="select">
 
+
+ <select name="u1">
 	<input class="select__input" type="hidden" id="nabor" name="">
 	<div class="select__head">Выберите</div>
 	<ul class="select__list" style="display: none;">
@@ -78,6 +80,8 @@
 	<li class="select__item" data-val="150">Оформление Vk</li>
 </ul>
 </div>
+
+ <select name="u1">
 <hr>
 
 
@@ -91,7 +95,7 @@
     $(function() {
     var calc = function() {
         var sum = 0;
-        $("select__list,.sum[type='text'],.sum:checked", fields).each(function() {
+        $("select,.sum[type='text'],.sum:checked", fields).each(function() {
             sum += +this.value||0
         });
         var sale = 0;
