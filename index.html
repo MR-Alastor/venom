@@ -431,7 +431,7 @@ jQuery(($) => {
         });
         var sale = 0;
         $(".sale:checked", fields).each(function() {
-            sale += +this.value
+            sale += +this.name
         });
         $("#text").val((sum - sum * sale / 100).toFixed(2))
     };
