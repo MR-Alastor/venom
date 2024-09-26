@@ -473,13 +473,13 @@ jQuery(($) => {
     async function sendContact(ev) {
       ev.preventDefault();
       const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
-        .getElementById('cbx-4').name;  <!--Пишем id поля input-->
+        .getElementById('u3').value;  <!--Пишем id поля input-->
        const senderMessage2 = document
         .getElementById('cbx-1').name;  
 		const senderMessage4 = document
         .getElementById('cbx-3').name; 
       const senderMessage = document
-        .getElementById('u3').name;
+        .getElementById('cbx-2').name;
       const webhookBody = {
         embeds: [{
           title: 'Тестовая форма отправки',
