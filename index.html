@@ -70,8 +70,8 @@
 
 <select id="u3" name="u1" class="select__head">
     <option  selected="selected">...</option>
-	<option  id="ggg" value="100" name="www" >Оформление Discord</option>
-	<option value="Оформление Twitch 100">Оформление Twitch</option>
+	<option value="Оформление Discord">Оформление Discord</option>
+	<option value="Оформление Twitch">Оформление Twitch</option>
 	<option value="Оформление Youtube">Оформление Youtube</option>
 	<option value="Оформление OBS">Оформление OBS</option>
 	<option value="Оформление VK">Оформление VK</option>
@@ -454,21 +454,17 @@ jQuery(($) => {
 
 <!----Скрипт подсчета---->
 <script>
-    $(function() {
-    var calc = function() {
-        var sum = 0;
-        $("select,.sum[type='text'],.sum:checked", fields).each(function() {
-            sum += +this.value||0
-        });
-        var sale = 0;
-        $(".sale:checked", fields).each(function() {
-            sale += +this.value
-        });
-        $("#text").val((sum - sum * sale / 100).toFixed(2))
-    };
-    fields = $("form");
-    fields.on('input change',calc)
-});
+
+window.onload = function() {
+  document.forms.formText.onclick = function() {
+    var sum = 0,
+      els = this.querySelectorAll('input[type="checkbox"]:checked');
+    for (var i = 0; i < els.length; i++) {
+      sum += +els[i].value;
+    }
+    this.sumOut.value = sum;
+  };
+};
 </script>
 
 
