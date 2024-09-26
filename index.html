@@ -91,7 +91,7 @@
     $(function() {
     var calc = function() {
         var sum = 0;
-        $("select__input,.sum[type='text'],.sum:checked", fields).each(function() {
+        $("select__head,.sum[type='text'],.sum:checked", fields).each(function() {
             sum += +this.value||0
         });
         var sale = 0;
