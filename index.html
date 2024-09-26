@@ -437,7 +437,7 @@ jQuery(($) => {
     $(function() {
     var calc = function() {
         var sum = 0;
-        $("select,.sum[type='text'],.sum:checked", fields).each(function() {
+        $("listItems,.sum[type='text'],.sum:checked", fields).each(function() {
             sum += +this.value||0
         });
         var sale = 0;
@@ -499,7 +499,15 @@ $('select').each(function () {
         $(this).toggleClass('active').next('ul.options').toggle();
     });
 
-
+    // Hides the unordered list when a list item is clicked and updates the styled div to show the selected list item
+    // Updates the select element to have the value of the equivalent option
+    $listItems.click(function (e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        /* alert($this.val()); Uncomment this for demonstration! */
+    });
 
     // Hides the unordered list when clicking outside of it
     $(document).click(function () {
