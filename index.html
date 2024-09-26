@@ -447,13 +447,13 @@ jQuery(($) => {
     async function sendContact(ev) {
       ev.preventDefault();
       const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
-        .getElementById('u3').value;  <!--Пишем id поля input-->
+        .getElementById('u3').name;  <!--Пишем id поля input-->
        const senderMessage2 = document
         .getElementById('radio1').name;  
 		const senderMessage4 = document
-        .getElementById('cbx-3').value; 
+        .getElementById('cbx-3').name; 
       const senderMessage = document
-        .getElementById('cbx-4').value;
+        .getElementById('cbx-4').name;
       const webhookBody = {
         embeds: [{
           title: 'Тестовая форма отправки',
