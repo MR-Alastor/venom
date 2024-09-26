@@ -57,7 +57,7 @@
 
    
 <form onsubmit="sendContact(event)" name="formText" >
-<!--Выпадающее меню------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--Выпадающее меню-->
 <p style="text-align: center; color: rgb(151 151 151); font-family: system-ui; font-size: 1em; line-height: 1.7em; display: block;">Отметь что хочешь оформить , после этого я свяжусь с тобой</p> 
 
 
@@ -68,10 +68,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-
-
-<select name="u1"  id="selectbox1">
-    
+<select name="u1"  class="select__head">
+    <option  selected="selected">нет</option>
 	<option value="120">Оформление Discord</option>
 	<option value="150">Оформление Twitch</option>
 	<option value="150">Оформление Youtube</option>
@@ -80,7 +78,7 @@
 </select>
 
 
-<hr>
+
 
 <script>
 // Iterate over each select element
@@ -149,9 +147,13 @@ $('select').each(function () {
 });
 </script>
 
+<hr>
 
 
-<!--2------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+<!--2-->
 <h2 class="inp1">Доп.функции к набору:</h2>  
 <div class="checkbox-wrapper-42">
   <input id="cbx-1" type="checkbox" value="100"  name="radio1" class="sum">
