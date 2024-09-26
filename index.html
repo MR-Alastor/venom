@@ -70,7 +70,7 @@
 
 <select id="u3" name="u1" class="select__head">
     <option  selected="selected">...</option>
-	<option value="100" name="ggg">Оформление Discord</option>
+	<option value="100" id="ggg">Оформление Discord</option>
 	<option value="Оформление Twitch 100">Оформление Twitch</option>
 	<option value="Оформление Youtube">Оформление Youtube</option>
 	<option value="Оформление OBS">Оформление OBS</option>
@@ -447,19 +447,19 @@ jQuery(($) => {
     async function sendContact(ev) {
       ev.preventDefault();
       const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
-        .getElementById('u3').name;  <!--Пишем id поля input-->
+        .getElementById('u3').id;  <!--Пишем id поля input-->
        const senderMessage2 = document
         .getElementById('radio1').value;  
 		const senderMessage4 = document
         .getElementById('cbx-3').value; 
       const senderMessage = document
-        .getElementById('cbx-4').value;
+        .getElementById('cbx-4').name;
       const webhookBody = {
         embeds: [{
           title: 'Тестовая форма отправки',
           fields: [{
               name: '```Тип товара:```',
-              name: senderMessage1 <!--Нумеруем поля чтобы результат приходил не один и тот же-->
+              id: senderMessage1 <!--Нумеруем поля чтобы результат приходил не один и тот же-->
             },
             {
               name: '```Выбранный второй чекбокс:```',
