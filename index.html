@@ -70,7 +70,7 @@
 
 <select id="u3" name="u1" class="select__head">
     <option  selected="selected">...</option>
-	<option value="100" value2="300">Оформление Discord</option>
+	<option value="100" label="22222">Оформление Discord</option>
 	<option value="Оформление Twitch">Оформление Twitch</option>
 	<option value="Оформление Youtube">Оформление Youtube</option>
 	<option value="Оформление OBS">Оформление OBS</option>
@@ -447,7 +447,7 @@ jQuery(($) => {
     async function sendContact(ev) {
       ev.preventDefault();
       const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
-        .getElementById('u3').value2;  <!--Пишем id поля input-->
+        .getElementById('u3').label;  <!--Пишем id поля input-->
        const senderMessage2 = document
         .getElementById('cbx-1').value;  
 		const senderMessage4 = document
