@@ -49,7 +49,7 @@
 
 
 
-<!-- The Modal -->
+<!-- The Modal---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div id="myModal" class="modal">
 <div class="modal-content">
 <span class="close">&times;</span>
@@ -57,7 +57,7 @@
 
    
 <form onsubmit="sendContact(event)" name="formText" >
-<!--Выпадающее меню-->
+<!--Выпадающее меню---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <p style="text-align: center; color: rgb(151 151 151); font-family: system-ui; font-size: 1em; line-height: 1.7em; display: block;">Отметь что хочешь оформить , после этого я свяжусь с тобой</p> 
 
 
@@ -69,21 +69,17 @@
 
 
 <select name="u1"  class="select__head">
-    <option  selected="selected">нет</option>
-	<option value="120">Оформление Discord</option>
-	<option value="150">Оформление Twitch</option>
-	<option value="150">Оформление Youtube</option>
-	<option value="150">Оформление OBS</option>
-	<option value="150">Оформление Vk</option>
+    <option  selected="selected">...</option>
+	<option id="ds" value="120">Оформление Discord</option>
+	<option id="tw" value="150">Оформление Twitch</option>
+	<option id="yt" value="150">Оформление Youtube</option>
+	<option id="obs" value="150">Оформление OBS</option>
+	<option id="vk" value="150">Оформление VK</option>
 </select>
 </div>
 <hr>
 
-
-
-
-
-<!--2-->
+<!--2---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <h2 class="inp1">Доп.функции к набору:</h2>  
 <div class="checkbox-wrapper-42">
   <input id="cbx-1" type="checkbox" value="100"  name="radio1" class="sum">
@@ -108,25 +104,23 @@
   <label class="cbx" for="cbx-4"></label>
   <label class="lbl" for="cbx-42">Авто постинг Vk <img width="26" height="26" src="https://mr-alastor.github.io/venom/sprites/vk-com.png" alt="vk-com"/></label>
 </div>
-<!--3-->
+<!--3---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <hr>
  <h2 class="inp3">Связь:</h2>
  
  
 
- <div class="main" style="display: blok;">
+<div class="main" style="display: blok;">
 <p class="lv">Укажите контактные данные для связи (DISCORD - VK - TELEGRAM)</p>
 <input type="text" style="b-popup-content2" placeholder="&nbspВаши данные для связи" class="form-control" id="input3">
 </div>
- <hr>
-
+<hr>
 
 <button type="submit" class="btn btn-primary" id="ko">ОТПРАВИТЬ</button>
 
 <br><p2>Примерный итог:</p2> <input type="text" name="text" disabled="false" value="" id="text">
  </form> 
    
-
 </div>
 
 </div>
@@ -453,13 +447,13 @@ jQuery(($) => {
     async function sendContact(ev) {
       ev.preventDefault();
       const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
-        .getElementById('nabor').value;  <!--Пишем id поля input-->
+        .getElementById('ds').value;  <!--Пишем id поля input-->
        const senderMessage2 = document
-        .getElementById('radio-1').name;  
+        .getElementById('tw').name;  
 		const senderMessage4 = document
-        .getElementById('radio-2').name; 
+        .getElementById('yt').name; 
       const senderMessage = document
-        .getElementById('itog').value;
+        .getElementById('obs').value;
       const webhookBody = {
         embeds: [{
           title: 'Тестовая форма отправки',
