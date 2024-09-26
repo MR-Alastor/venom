@@ -754,7 +754,7 @@ p4 {
 .select__head {
     width: 100%;
 	background:#303030;
-	border: solid 2px #0e0e0e
+	border: solid 2px #0e0e0e;
 	box-shadow: inset 0px 0px 5px 0px #606060 !important;
     max-width: 100%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
