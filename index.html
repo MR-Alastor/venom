@@ -70,7 +70,7 @@
 
 <select id="u3" name="u1" class="select__head">
     <option  selected="selected">...</option>
-	<option value="100" name="1000" >Оформление Discord</option>
+	<option value="100ввв"  >Оформление Discord</option>
 	<option  value="Оформление Twitch">Оформление Twitch</option>
 	<option value="Оформление Youtube">Оформление Youtube</option>
 	<option value="Оформление OBS">Оформление OBS</option>
@@ -427,11 +427,11 @@ jQuery(($) => {
     var calc = function() {
         var sum = 0;
         $("select,.sum[type='text'],.sum:checked", fields).each(function() {
-            sum += +this.name||0
+            sum += +this.value||0
         });
         var sale = 0;
         $(".sale:checked", fields).each(function() {
-            sale += +this.name
+            sale += +this.value
         });
         $("#text").val((sum - sum * sale / 100).toFixed(2))
     };
