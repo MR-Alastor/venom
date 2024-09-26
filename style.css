@@ -767,16 +767,16 @@ p4 {
 }
 
 .select__head::after {
-    width: 16px;
-    height: 16px;
-    background:  url(https://mr-alastor.github.io/venom/sprites/icons.png);
-    position: absolute;
-    right: 20px;
-    bottom: 50%;
-    transform: translateY(50%);
+    width: 16px!important;
+    height: 16px!important;
+    background:  url(https://mr-alastor.github.io/venom/sprites/icons.png)!important;
+    position: absolute!important;
+    right: 20px!important;
+    bottom: 50%!important;
+    transform: translateY(50%)!important;
     content: '';
-    display: block;
-    transition: .2s ease-in;
+    display: block!important;
+    transition: .2s ease-in!important;
 }
 
 .select__head.open::after {
