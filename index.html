@@ -454,17 +454,16 @@ jQuery(($) => {
 
 <!----Скрипт подсчета---->
 <script>
-    $(function() {
-    var calc = function() {
-        var sale = 0;
-        $(".sale:checked", fields).each(function() {
-            sale += +this.value
-        });
-        $("#text").val((sum - sum * sale / 100).toFixed(2))
-    };
-    fields = $("form");
-    fields.on('input change',calc)
-});
+ window.onload = function() {
+  document.forms.formText.onclick = function() {
+    var sum = 0,
+      els = this.querySelectorAll('input[type="checkbox"]:checked');
+    for (var i = 0; i < els.length; i++) {
+      sum += +els[i].value;
+    }
+    this.sumOut.value = sum;
+  };
+};
 </script>
 
 
