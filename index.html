@@ -65,37 +65,21 @@
 
 <h2 class="inp1">Выберите набор:</h2>  
    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><div class="select">
 
 
-<select name="u1"  class="potentially_red">
+<select name="u1"  class="select__head">
     <option  selected="selected">нет</option>
 	<option value="120">Оформление Discord</option>
 	<option value="150">Оформление Twitch</option>
 	<option value="150">Оформление Youtube</option>
 	<option value="150">Оформление OBS</option>
-	<option value="150">Оформление VK</option>
+	<option value="150">Оформление Vk</option>
 </select>
-
+</div>
 <hr>
 
-<script>
 
-$('select.potentially_red').on('change', function() {
- if ($(this).val()=='red') {
-  $(this).addClass('option_red');
- } else {
-  $(this).removeClass('option_red');
- }
-});
-$('select.potentially_red').each( function() {
- if ($(this).val()=='red') {
-  $(this).addClass('option_red');
- } else {
-  $(this).removeClass('option_red');
- }
-});
-</script>
 
 
 
