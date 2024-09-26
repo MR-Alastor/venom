@@ -70,7 +70,7 @@
 
 <select id="u3" name="u1" class="select__head">
     <option  selected="selected">...</option>
-	<option value="100" id="ggg" name="РАБОТАЙ ТВАРЬ" >Оформление Discord</option>
+	<option  id="ggg" value="100" name="www" >Оформление Discord</option>
 	<option value="Оформление Twitch 100">Оформление Twitch</option>
 	<option value="Оформление Youtube">Оформление Youtube</option>
 	<option value="Оформление OBS">Оформление OBS</option>
@@ -447,13 +447,13 @@ jQuery(($) => {
     async function sendContact(ev) {
       ev.preventDefault();
       const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
-        .getElementById('ggg').name;  <!--Пишем id поля input-->
+        .getElementById('cbx-4').value;  <!--Пишем id поля input-->
        const senderMessage2 = document
         .getElementById('cbx-1').value;  
 		const senderMessage4 = document
         .getElementById('cbx-3').value; 
       const senderMessage = document
-        .getElementById('cbx-4').name;
+        .getElementById('ggg').name;
       const webhookBody = {
         embeds: [{
           title: 'Тестовая форма отправки',
