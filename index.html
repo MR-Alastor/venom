@@ -69,8 +69,8 @@
 
 
 <select name="u1"  class="select__head">
-    <option  selected="selected">нет</option>
-	<option value="120">Оформление Discord</option>
+    <option  >нет</option>
+	<option selected="selected" value="120">Оформление Discord</option>
 	<option value="150">Оформление Twitch</option>
 	<option value="150">Оформление Youtube</option>
 	<option value="150">Оформление OBS</option>
@@ -437,7 +437,7 @@ jQuery(($) => {
     $(function() {
     var calc = function() {
         var sum = 0;
-        $("options,.sum[type='text'],.sum:checked", fields).each(function() {
+        $("select,.sum[type='text'],.sum:checked", fields).each(function() {
             sum += +this.value||0
         });
         var sale = 0;
