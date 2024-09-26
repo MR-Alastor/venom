@@ -437,7 +437,7 @@ jQuery(($) => {
     $(function() {
     var calc = function() {
         var sum = 0;
-        $("listItems,.sum[type='text'],.sum:checked", fields).each(function() {
+        $("options,.sum[type='text'],.sum:checked", fields).each(function() {
             sum += +this.value||0
         });
         var sale = 0;
