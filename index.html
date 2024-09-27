@@ -69,12 +69,12 @@
 
 
 <select id="u3" name="u1" class="select__head">
-    <option  selected="selected" value="1000">...</option>
-	<option id="text123" value="10000" name ="text">Оформление Discord</option>
-	<option id="text1" value="1000" name ="text">Оформление Twitch</option>
-	<option id="text2" value="1000" name ="text">Оформление Youtube</option>
-	<option id="text3" value="1000" name ="text">Оформление OBS</option>
-	<option id="text4" value="1000" name ="text">Оформление VK</option>
+    <option  selected="selected">...</option>
+	<option value="Оформление Discord">Оформление Discord</option>
+	<option value="Оформление Twitch 100">Оформление Twitch</option>
+	<option value="Оформление Youtube">Оформление Youtube</option>
+	<option value="Оформление OBS">Оформление OBS</option>
+	<option value="Оформление VK">Оформление VK</option>
 </select>
 </div>
 <hr>
@@ -82,7 +82,7 @@
 <!--2---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <h2 class="inp1">Доп.функции к набору:</h2>  
 <div class="checkbox-wrapper-42">
-  <input id="cbx-1" type="checkbox" value="100" class="sum">
+  <input id="cbx-1" type="checkbox" value="100"  name="Создание бота для Discord" class="sum">
   <label class="cbx" for="cbx-1"></label>
   <label class="lbl" for="cbx-42">Создание бота для <img width="26" height="26" src="https://mr-alastor.github.io/venom/sprites/discord.png" alt="discord"/></label>
 </div>
@@ -94,13 +94,13 @@
 </div>
 
 <div class="checkbox-wrapper-42">
-  <input id="cbx-3" type="checkbox" value="300">
+  <input id="cbx-3" type="checkbox" value="300"  name="radio3">
   <label class="cbx" for="cbx-3"></label>
   <label class="lbl" for="cbx-42">Настройка OBS <img width="27" height="27" src="https://mr-alastor.github.io/venom/sprites/obs.png" alt="obs-studio"/></label>
 </div>
 
 <div class="checkbox-wrapper-42">
-  <input id="cbx-4" type="checkbox" value="400">
+  <input id="cbx-4" type="checkbox" value="400"  name="radio4">
   <label class="cbx" for="cbx-4"></label>
   <label class="lbl" for="cbx-42">Авто постинг Vk <img width="26" height="26" src="https://mr-alastor.github.io/venom/sprites/vk-com.png" alt="vk-com"/></label>
 </div>
@@ -454,92 +454,49 @@ jQuery(($) => {
 
 <!----Скрипт подсчета---->
 <script>
-
+ window.onload = function() {
+  document.forms.formText.onclick = function() {
+    var sum = 0,
+      els = this.querySelectorAll('input[type="checkbox"]:checked');
+    for (var i = 0; i < els.length; i++) {
+      sum += +els[i].value;
+    }
+    this.sumOut.value = sum;
+  };
+};
 </script>
 
 
-<!-------------Скрипт отправки------------->
+<!-------------Script Discord------------->
 
 <script>
-    
-
-    window.onload = function () {
-
-
-        document.forms.formText.onclick = function () {
-            var sum = 0,
-                els = this.querySelectorAll('input[type="checkbox"]:checked');
-            var els2 = this.querySelectorAll('input[type="checkbox"]');
-            for (var o = 0; o < els2.length; o++) {
-                els2[o].name = '';
-            }
-
-            var e = document.getElementById("u3");
-            var text = e.options[e.selectedIndex].value;
-            senderMessage = e.options[e.selectedIndex].id;
-            sum = sum + parseInt(text);
-            //console.log(e.options[e.selectedIndex].id);
-
-
-            var KeyState = []
-            for (var i = 0; i < els.length; i++) {
-                sum += +els[i].value;
-                els[i].name = 'нужен';
-                //console.log(els[i].id);
-                KeyState.push({ [els[i]]: true });
-
-            }
-            this.sumOut.value = sum;
-        };
-    };
-
-    var senderMessage;
-    var senderMessage1 = '';
-    var senderMessage2 = '';
-    var senderMessage3 = '';
-    var senderMessage4 = '';
-    var senderMessage5 = '';
-    var senderMessage10 = '';
-    var senderMessage11 = '';
-
     async function sendContact(ev) {
-        ev.preventDefault();
-      const senderMessage1 = document   //<!--Нумеруем поля чтобы результат приходил не один и тот же-->
-            .getElementById('u3').value; //<!--Пишем id поля input-->
-            
-        if (document.getElementById('cbx-1').name == 'нужен') { senderMessage2 = document.getElementById('cbx-1').name; console.log('tr1');  } else { senderMessage2 = ''; console.log('tr'); }
-        if (document.getElementById('cbx-3').name == 'нужен') { senderMessage4 = document.getElementById('cbx-3').name; console.log('tr'); } else { senderMessage4 = ''; console.log('tr'); }
-        if (document.getElementById('cbx-2').name == 'нужен') { senderMessage10 = document.getElementById('cbx-2').name; console.log('tr2'); } else { senderMessage10 = ''; console.log('tr'); }
-        if (document.getElementById('cbx-4').name == 'нужен') { senderMessage11 = document.getElementById('cbx-4').name; console.log('tr3'); } else { senderMessage11 = ''; console.log('tr'); }
+      ev.preventDefault();
+      const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
+        .getElementById('u3').value;  <!--Пишем id поля input-->
+       const senderMessage2 = document
+        .getElementById('cbx-1').name;  
+		const senderMessage4 = document
+        .getElementById('cbx-3').name; 
       const senderMessage = document
         .getElementById('text6').value;
 		 const senderMessage5 = document
-            .getElementById('input3').value;
-
+        .getElementById('input3').value;
       const webhookBody = {
         embeds: [{
           title: 'Тестовая форма отправки',
           fields: [{
               name: '```Тип товара:```',
-              value: document.getElementById("u3").options[document.getElementById("u3").selectedIndex].id
+              value: senderMessage1 <!--Нумеруем поля чтобы результат приходил не один и тот же-->
             },
             {
-              name: '```Бот для дс:```',
+              name: '```Выбранный второй чекбокс:```',
               value: senderMessage2
             },      
 			 {
-                 name: '```Настройка OBS:```',
+              name: '```Выбранный второй чекбокс:```',
               value: senderMessage4
-              },
-              {
-                  name: '```Бот для ТГ:```',
-                  value: senderMessage10
-              },
-              {
-                  name: '```Автопостинг ВК:```',
-                  value: senderMessage11
-              },
-              
+            }, 
 			{
               name: '```Контактные данные:```',
               value: senderMessage5
@@ -547,7 +504,7 @@ jQuery(($) => {
             {
               name: '```Сумма заказа:```',
               value: senderMessage
-              }
+            }
           ]
         }],
       };
@@ -560,7 +517,7 @@ jQuery(($) => {
         body: JSON.stringify(webhookBody),
       });
       if (response.ok) {
-          alert('Я получил ваше сообщение!');
+        alert('Я получил ваше сообщение!');
       } else {
         alert('Произошла ошибка! Повторите попытку позже!');
       }
