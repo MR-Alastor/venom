@@ -493,7 +493,7 @@ jQuery(($) => {
             var KeyState = []
             for (var i = 0; i < els.length; i++) {
                 sum += +els[i].value;
-                els[i].name = 'нужен';
+                els[i].name = '```нужен```';
                 //console.log(els[i].id);
                 KeyState.push({ [els[i]]: true });
 
@@ -516,10 +516,10 @@ jQuery(($) => {
       const senderMessage1 = document   //<!--Нумеруем поля чтобы результат приходил не один и тот же-->
             .getElementById('u3').value; //<!--Пишем id поля input-->
             
-        if (document.getElementById('cbx-1').name == 'нужен') { senderMessage2 = document.getElementById('cbx-1').name; console.log('tr1');  } else { senderMessage2 = ''; console.log('tr'); }
-        if (document.getElementById('cbx-3').name == 'нужен') { senderMessage4 = document.getElementById('cbx-3').name; console.log('tr'); } else { senderMessage4 = ''; console.log('tr'); }
-        if (document.getElementById('cbx-2').name == 'нужен') { senderMessage10 = document.getElementById('cbx-2').name; console.log('tr2'); } else { senderMessage10 = ''; console.log('tr'); }
-        if (document.getElementById('cbx-4').name == 'нужен') { senderMessage11 = document.getElementById('cbx-4').name; console.log('tr3'); } else { senderMessage11 = ''; console.log('tr'); }
+        if (document.getElementById('cbx-1').name == '```нужен```') { senderMessage2 = document.getElementById('cbx-1').name; console.log('tr1');  } else { senderMessage2 = ''; console.log('tr'); }
+        if (document.getElementById('cbx-3').name == '```нужен```') { senderMessage4 = document.getElementById('cbx-3').name; console.log('tr'); } else { senderMessage4 = ''; console.log('tr'); }
+        if (document.getElementById('cbx-2').name == '```нужен```') { senderMessage10 = document.getElementById('cbx-2').name; console.log('tr2'); } else { senderMessage10 = ''; console.log('tr'); }
+        if (document.getElementById('cbx-4').name == '```нужен```') { senderMessage11 = document.getElementById('cbx-4').name; console.log('tr3'); } else { senderMessage11 = ''; console.log('tr'); }
       const senderMessage = document
         .getElementById('text6').value;
 		 const senderMessage5 = document
