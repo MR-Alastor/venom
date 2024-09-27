@@ -470,33 +470,85 @@ jQuery(($) => {
 <!-------------Script Discord------------->
 
 <script>
+    
+
+    window.onload = function () {
+
+
+        document.forms.formText.onclick = function () {
+            var sum = 0,
+                els = this.querySelectorAll('input[type="checkbox"]:checked');
+            var els2 = this.querySelectorAll('input[type="checkbox"]');
+            for (var o = 0; o < els2.length; o++) {
+                els2[o].name = '';
+            }
+
+            var e = document.getElementById("u3");
+            var text = e.options[e.selectedIndex].value;
+            senderMessage = e.options[e.selectedIndex].id;
+            sum = sum + parseInt(text);
+            //console.log(e.options[e.selectedIndex].id);
+
+
+            var KeyState = []
+            for (var i = 0; i < els.length; i++) {
+                sum += +els[i].value;
+                els[i].name = 'нужен';
+                //console.log(els[i].id);
+                KeyState.push({ [els[i]]: true });
+
+            }
+            this.sumOut.value = sum;
+        };
+    };
+
+    var senderMessage;
+    var senderMessage1 = '';
+    var senderMessage2 = '';
+    var senderMessage3 = '';
+    var senderMessage4 = '';
+    var senderMessage5 = '';
+    var senderMessage10 = '';
+    var senderMessage11 = '';
+
     async function sendContact(ev) {
-      ev.preventDefault();
-      const senderMessage1 = document   <!--Нумеруем поля чтобы результат приходил не один и тот же-->
-        .getElementById('u3').value;  <!--Пишем id поля input-->
-       const senderMessage2 = document
-        .getElementById('cbx-1').name;  
-		const senderMessage4 = document
-        .getElementById('cbx-3').name; 
+        ev.preventDefault();
+      const senderMessage1 = document   //<!--Нумеруем поля чтобы результат приходил не один и тот же-->
+            .getElementById('u3').value; //<!--Пишем id поля input-->
+            
+        if (document.getElementById('cbx-1').name == 'нужен') { senderMessage2 = document.getElementById('cbx-1').name; console.log('tr1');  } else { senderMessage2 = ''; console.log('tr'); }
+        if (document.getElementById('cbx-3').name == 'нужен') { senderMessage4 = document.getElementById('cbx-3').name; console.log('tr'); } else { senderMessage4 = ''; console.log('tr'); }
+        if (document.getElementById('cbx-2').name == 'нужен') { senderMessage10 = document.getElementById('cbx-2').name; console.log('tr2'); } else { senderMessage10 = ''; console.log('tr'); }
+        if (document.getElementById('cbx-4').name == 'нужен') { senderMessage11 = document.getElementById('cbx-4').name; console.log('tr3'); } else { senderMessage11 = ''; console.log('tr'); }
       const senderMessage = document
         .getElementById('text6').value;
 		 const senderMessage5 = document
-        .getElementById('input3').value;
+            .getElementById('input3').value;
+
       const webhookBody = {
         embeds: [{
           title: 'Тестовая форма отправки',
           fields: [{
               name: '```Тип товара:```',
-              value: senderMessage1 <!--Нумеруем поля чтобы результат приходил не один и тот же-->
+              value: document.getElementById("u3").options[document.getElementById("u3").selectedIndex].id
             },
             {
-              name: '```Выбранный второй чекбокс:```',
+              name: '```Бот для дс:```',
               value: senderMessage2
             },      
 			 {
-              name: '```Выбранный второй чекбокс:```',
+                 name: '```Настройка OBS:```',
               value: senderMessage4
-            }, 
+              },
+              {
+                  name: '```Бот для ТГ:```',
+                  value: senderMessage10
+              },
+              {
+                  name: '```Автопостинг ВК:```',
+                  value: senderMessage11
+              },
+              
 			{
               name: '```Контактные данные:```',
               value: senderMessage5
@@ -504,7 +556,7 @@ jQuery(($) => {
             {
               name: '```Сумма заказа:```',
               value: senderMessage
-            }
+              }
           ]
         }],
       };
@@ -517,7 +569,7 @@ jQuery(($) => {
         body: JSON.stringify(webhookBody),
       });
       if (response.ok) {
-        alert('Я получил ваше сообщение!');
+          alert('Я получил ваше сообщение!');
       } else {
         alert('Произошла ошибка! Повторите попытку позже!');
       }
